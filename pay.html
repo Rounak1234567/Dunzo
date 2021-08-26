@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        #nav-bar {
+            width: 85%;
+            height: 35px;
+            padding: 1% 10%;
+            margin-top: 0.5%;
+            background-color: white;
+            position: fixed;
+        }
+        
+        #nav-bar>div {
+            padding: 0% 0%;
+            float: left;
+            margin: 0.5% 0%;
+        }
+        
+        #nav-bar>img {
+            float: left;
+            width: 10%;
+            height: 80%;
+            margin-left: 5%;
+        }
+        
+        * {
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        #pay0 {
+            width: 100%;
+            height: 1150px;
+            padding-top: 100px;
+            background-color: whitesmoke;
+        }
+        
+        #pay1 {
+            width: 50%;
+            height: 500px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-left: 10%;
+        }
+        
+        h2 {
+            font-weight: 500;
+            background: white;
+        }
+        
+        button {
+            background: white;
+        }
+        
+        #add,
+        #cards {
+            height: 100px;
+            width: 300px;
+            border-style: dashed;
+            border-radius: 10px;
+            color: rgb(43, 168, 137);
+        }
+        
+        #change {
+            width: 80px;
+            height: 30px;
+            border-style: dashed;
+            border-radius: 5px;
+            color: rgb(43, 168, 137);
+        }
+        
+        #pay1>div,
+        #pay2>div {
+            background: white;
+        }
+        
+        #pay2 {
+            margin-top: 20px;
+            width: 50%;
+            height: 500px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-left: 10%;
+        }
+        
+        p {
+            color: gray;
+            margin-bottom: 20px;
+            background: white;
+        }
+        
+        #pay3 {
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+        }
+        
+        #pay31 {
+            width: 40%;
+            height: 380px;
+            padding-left: 25px;
+            background: whitesmoke;
+        }
+        
+        #but {
+            background: whitesmoke;
+            border: none;
+            padding-top: 15px;
+            font-size: 16px;
+        }
+        
+        #add1 {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            position: absolute;
+            top: 0%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: none;
+        }
+        
+        #add2 {
+            width: 450px;
+            height: 500px;
+            background-color: white;
+            opacity: 1;
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
+        }
+        #img{
+            text-align: center;
+        }
+        
+        #img>img {
+            width: 350px;
+            height: 250px;
+            
+        }
+        #address{
+            margin-top: 5%;
+           display: grid;
+           grid-template-columns: 50% 50%;
+           grid-gap: 10px;
+        }
+       #address1{
+        text-align: center;
+       }
+       #address1 button{
+           margin-top: 2%;
+           border: none;
+           background-color: rgb(110, 226, 191);
+           padding: 2% 30%;
+           height: 40px;
+           border-radius: 20px;
+       }
+       #close {
+            position: absolute;
+            top: 0;
+            right: 10px;
+            font-size: 30px;
+            transform: rotate(45deg);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="nav-bar">
+
+        <img src="https://resources.dunzo.com/web-assets/prod/_next/static/images/logo-4d2d81aefcf296bc100d9edc114c2ea5.png" style="margin-top: 0.5%;" />
+
+        <div id="set_location" style="margin-left: 4%; margin-right: 10%; margin-top: 1%;">
+            <h5 style="margin: 0%; font-weight: 550;">Set Location</h5>
+        </div>
+        <div style=" margin-right: 3%; margin-top: 1%;">
+            <h5 style="margin: 0%; font-weight: 550;">Dunzo for Partners</h5>
+        </div>
+        <div style=" margin-right: 3%; margin-top: 1%;">
+            <h5 style="margin: 0%; font-weight: 550;">Buisness with Dunzo</h5>
+        </div>
+        <div style=" margin-right: 5%; margin-top: 0.0%;">
+            <img src="http://assets.stickpng.com/images/585e4ad1cb11b227491c3391.png" alt="" width="20" height="20" style="margin-left: 20%;" />
+            <p style="margin-top: 0%; font-size: 15px;">Search</p>
+
+        </div>
+        <div style=" margin-right: 5%; margin-top: 0%;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCJ2oIX2mRB0UW-AJwif46egO8Uc12qZs7oQ&usqp=CAU" alt="" width="20" height="20" style="margin-top: 0%; margin-bottom: 1%; margin-left: 10%;">
+            <p style="margin-top: 0%; font-size: 15px;">Cart</p>
+        </div>
+        <div style="margin-top: 0%;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6AvV7qG5r9EE3JdNFASuScC92BHaqiI3KkA&usqp=CAU" alt="" width="30" height="30">
+        </div>
+
+    </div>
+    <div id="pay0">
+        <div id="pay1">
+            <h2>Add delivery address</h2>
+            <p>Choose your delivery address from address book or add new</p>
+            <button id="add">Add new address</button>
+        </div>
+        <div id="pay2">
+            <div>
+                <h2>Select payment method</h2>
+                <p>Select your payment method from the existing one or add new one</p>
+            </div>
+            <div id="pay3">
+                <div id="pay31">
+                    <button id="but">Wallets</button><br/>
+                    <button id="but">Credit and Debit cards</button><br/>
+                    <button id="but">UPI</button>
+                </div>
+                <div id="pay32">
+                    <button id="cards" onclick="cards()">Credit and Debit cards</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="add1">
+        <div id="add2">
+            <div id="close">+</div>
+            <h2>Add your address here</h2>
+            <div id="img">
+                <img src="https://www.researchgate.net/publication/333785285/figure/fig1/AS:769752540655616@1560534715786/Field-sites-in-India-source-modified-Google-map.jpg" />
+            </div>
+            <div id="address">
+                <div>
+                    <lable>Flat, Floor, Building Name</lable>
+                <input type="text" id="line1" placeholder="Nearest Metro Station" />
+                </div>
+                <div>
+                    <lable>How to reach</lable>
+                <input type="text" id="line1" placeholder="Enter Flat No!" />
+                </div>
+                <div>
+                    <lable>Flat, Floor, Building Name</lable>
+                <input type="text" id="line1" placeholder="Enter Flat No!" />
+                </div>
+                <div>
+                    <lable>Flat, Floor, Building Name</lable>
+                <input type="text" id="line1" placeholder="Enter Flat No!" />
+                </div>
+               
+            </div>
+            <div id="address1">
+                <button>Continue</button>
+            </div>
+        </div>
+    </div>
+    
+</body>
+<script>
+    var btn = document.getElementById("add");
+        btn.addEventListener("click", function () {
+            document.getElementById("add1").style.display = "flex";
+        });
+        var close = document.getElementById("close");
+        close.addEventListener("click", function () {
+            document.getElementById("add1").style.display = "none";
+        });
+
+
+    function cards() {
+        alert("Select a payment method");
+    }
+</script>
+
+</html>
