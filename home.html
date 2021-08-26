@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        #page {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #image1 {
+            padding: 10% 14%;
+        }
+
+        #home {
+            background-color: whitesmoke;
+            padding: 5% 14%;
+            height: 550px;
+        }
+
+        #home>h1 {
+            font-weight: 500;
+            font-size: 36px;
+        }
+
+        #home>p {
+            color: gray;
+            font-weight: 400;
+        }
+
+        #img1>img {
+            float: left;
+            padding: 2%;
+        }
+
+        img:hover {
+            animation: shake 0.4s;
+            animation-iteration-count: finite;
+            background-color: whitesmoke;
+        }
+
+        @keyframes shake {
+            0% {
+                transform: translate(1px, 1px) rotate(0deg);
+            }
+
+            10% {
+                transform: translate(-1px, -2px) rotate(-1deg);
+            }
+
+            20% {
+                transform: translate(-3px, 0px) rotate(1deg);
+            }
+
+            30% {
+                transform: translate(3px, 2px) rotate(0deg);
+            }
+
+            40% {
+                transform: translate(1px, -1px) rotate(1deg);
+            }
+
+            50% {
+                transform: translate(-1px, 2px) rotate(-1deg);
+            }
+
+            60% {
+                transform: translate(-3px, 1px) rotate(0deg);
+            }
+
+            70% {
+                transform: translate(3px, 1px) rotate(-1deg);
+            }
+
+            80% {
+                transform: translate(-1px, -1px) rotate(1deg);
+            }
+
+            90% {
+                transform: translate(1px, 2px) rotate(0deg);
+            }
+
+            100% {
+                transform: translate(1px, -2px) rotate(-1deg);
+            }
+        }
+
+        #image1 .btn {
+            position: absolute;
+            top: 89%;
+            left: 27%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            background-color: white;
+            color: green;
+            font-size: 16px;
+            padding: 12px 35px;
+            border: none;
+            cursor: pointer;
+            border-radius: 25px;
+            text-align: center;
+        }
+
+        #img2>div {
+            float: left;
+            padding: 4%;
+        }
+
+        #clear {
+            clear: both;
+        }
+
+        #picks {
+            padding: 5% 14%;
+        }
+
+        #picks>h1 {
+            font-weight: 500;
+            text-align: center;
+        }
+
+        #picks>img {
+            float: left;
+            padding: 2%;
+        }
+
+        #text {
+            width: 350px;
+            height: 100px;
+            font-weight: 400;
+            font-size: 18px;
+        }
+
+        #mobile>div {
+            float: left;
+            padding: 2%;
+        }
+
+        #mobile {
+            background-color: whitesmoke;
+            padding: 10% 27%;
+            height: 80px;
+        }
+
+        #text>img {
+            padding: 2%;
+        }
+
+        #areas>h2 {
+            font-weight: 500;
+            font-size: 24px;
+        }
+
+        #areas {
+            padding: 5% 14%;
+        }
+
+        #areas>div {
+            color: gray;
+            float: left;
+            padding-right: 20px;
+        }
+
+        #about {
+            background-color: #000033;
+            width: 70%;
+            height: 500px;
+        }
+
+        #about {
+            padding: 5% 17%;
+        }
+
+        #about>h4 {
+            color: white;
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        #about>p {
+            color: white;
+            font-weight: 300;
+            font-size: 12px;
+        }
+
+        .space {
+            padding: 30px;
+            padding-bottom: 20px;
+        }
+
+        #about>div {
+            float: left;
+            color: white;
+            padding-right: 5%;
+        }
+
+        #nav-bar {
+            width: 85%;
+            height: 35px;
+            padding: 1% 10%;
+
+            background-color: white;
+            position: fixed;
+
+        }
+
+        #nav-bar>div {
+            padding: 0% 0%;
+            float: left;
+            margin: 0.5% 0%;
+
+
+        }
+
+        #btn {
+            background-color: #1DE9B6;
+            color: white;
+            padding: 8% 10%;
+            width: 75px;
+            border-radius: 20px;
+            border: none;
+            margin-top: 0%;
+        }
+
+
+        #nav-bar>img {
+            float: left;
+            width: 10%;
+            height: 80%;
+            margin-left: 5%;
+        }
+
+        .bd-modal {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            top: 0%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: none;
+        }
+
+        .modal-content {
+            width: 350px;
+            height: 380px;
+            background-color: white;
+            opacity: 1;
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        #immg {
+            width: 15%;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        input {
+            font-size: 20px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        #close {
+            position: absolute;
+            top: 0;
+            right: 10px;
+            font-size: 30px;
+            transform: rotate(45deg);
+            cursor: pointer;
+        }
+
+        #otp {
+            width: 100%;
+            height: 40px;
+            margin-top: 30px;
+            font-size: 15px;
+            border-radius: 20px;
+            background-color: #18FFFF;
+            padding: 10px 80px;
+        }
+
+        .otp_dom {
+            width: 100%;
+            height: 40px;
+            margin-top: 30px;
+            font-size: 15px;
+            border-radius: 20px;
+            background-color: #18FFFF;
+            padding: 10px 80px;
+        }
+
+        .modal-content button {
+            border-radius: 50px;
+        }
+
+        #inp_1 {
+            border: 1px solid green;
+            padding: 10px;
+            width: 95%;
+        }
+
+        .otp_input {
+            border: 1px solid green;
+            padding: 10px;
+            width: 95%;
+        }
+
+        #p_2 {
+            margin-top: 0px;
+            font-weight: 100;
+        }
+
+        #p_1 {
+            margin-bottom: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="page">
+        <div id="nav-bar">
+
+            <img
+                src="https://resources.dunzo.com/web-assets/prod/_next/static/images/logo-4d2d81aefcf296bc100d9edc114c2ea5.png"  style="margin-top: 0.5%;"/>
+
+            <div id="set_location" style="margin-left: 4%; margin-right: 10%; margin-top: 1%;">
+                <h5 style="margin: 0%; font-weight: 550;">Set Location</h5>
+            </div>
+            <div style=" margin-right: 3%; margin-top: 1%;">
+                <h5 style="margin: 0%; font-weight: 550;">Dunzo for Partners</h5>
+            </div>
+            <div style=" margin-right: 3%; margin-top: 1%;">
+                <h5 style="margin: 0%; font-weight: 550;">Buisness with Dunzo</h5>
+            </div>
+            <div style=" margin-right: 5%; margin-top: 0.0%;"> 
+                <img src="http://assets.stickpng.com/images/585e4ad1cb11b227491c3391.png" alt="" width="20"
+                    height="20" style="margin-left: 20%;"/>
+                <p style="margin-top: 0%; font-size: 15px;">Search</p>
+
+            </div>
+            <div style=" margin-right: 5%; margin-top: 0%;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCJ2oIX2mRB0UW-AJwif46egO8Uc12qZs7oQ&usqp=CAU"
+                    alt="" width="20" height="20" style="margin-top: 0%; margin-bottom: 1%; margin-left: 10%;">
+                <p style="margin-top: 0%; font-size: 15px;">Cart</p>
+            </div>
+            <div>
+                <button id="btn">Sign in</button>
+            </div>
+
+        </div>
+
+
+        <div class="bd-modal">
+            <div class="modal-content">
+                <div id="close">+</div>
+                <img id="immg" src="https://resources.dunzo.com/web-assets/prod/_next/static/images/signin-icon-cb6e6a706f01b84896e60235a2392ac9.png"
+                    alt="">
+                <h3 id="p_1">Sign in or Sign up</h3>
+                <p id="p_2">Get started with Dunzo</p>
+                <label for="" id="lbl_1">Enter your phone number</label><br>
+                <input type="text" placeholder="Mobile Number" id="inp_1"><br>
+                <button id="otp">Send OTP</button>
+            </div>
+        </div>
+
+
+        <div id="image1">
+            <img src="https://resources.dunzo.com/web-assets/prod/_next/static/images/dunzo-daily-desktop-touchpoint-aa438977d975b833de607e63c953e25f.jpg"
+                width="950" height="500" />
+            <button class="btn" onClick="myFunction()">Try Dunzo Daily</button>
+        </div>
+        <div id="home">
+            <h1>Bangalore</h1>
+            <p>Why step out when you can get everything delivered home with the tap of a button? Bangalore’s favourite
+                delivery app gets you Food, Grocery, Medicine, Pet Supplies, Fruits & Vegetables, Meat & Fish, Health &
+                Wellness, Gifts and Send Packages
+                from one end of the city to the other. From your local kirana stores to your favourite brands, grocery
+                shopping to your forgotten charger, we are always on the move for you. Why worry about your chores, when
+                you can get it all Dun!</p>
+            <div id="img1">
+                <img src="https://ik.imagekit.io/dunzo/home/tr:w-488,h-360_home_icon/operator-FFWUCfzmUzhok89HMYt0ON2Gy5oZECO73gRenPw11HxAeCLBtTBOG8FMqMTe92UOnScOPMUnjYDcaPVxx7wSFJwXJ3kSR3YRsPby4EgC4zW2mVYLc99zuvVh7O2Ppmx2QMQd40UiwYLGhy0OjbMayr.png"
+                    width="200" height="175" />
+                <img src="https://ik.imagekit.io/dunzo/home/tr:w-488,h-360_home_icon/dunzo/icons/newHome/promoBanner/kitImageUrl/largeIcons/default_pnd_secondary2_1613527381240.png"
+                    width="200" height="175" />
+                <img src="https://ik.imagekit.io/dunzo/home/tr:w-488,h-360_home_icon/operator-ABHxCyRo8CLcEMC0YE43zsmH2XHFv3xr6B8Y3tIdBpKE1NBAjyHS4vgJY3T3z8AEascTap9OETFY0CdvpHj70KZSGFNrCxkFVtUugsMRkyV5jVk9XHl164PCPop56VNkdpLhfymH86JkFjMlYYgQHK.jpg"
+                    width="200" height="175" />
+                <img src="https://ik.imagekit.io/dunzo/home/tr:w-488,h-360_home_icon/dunzo/icons/newHome/promoBanner/kitImageUrl/largeIcons/default_fnv_secondary2_1613527515094.png"
+                    width="200" height="175" />
+            </div>
+            <div id="img2">
+                <div>
+                    <img src="https://ik.imagekit.io/dunzo/home/tr:w-80,h-80_home_icon/icons/R4_Icons/Home/default_meat_tertiary_grid_1609739765849.png"
+                        width="40" height="40" />
+                    <p>Meat and Fish</p>
+                </div>
+                <div>
+                    <img src="https://ik.imagekit.io/dunzo/home/tr:w-80,h-80_home_icon/icons/R4_Icons/Home/default_pets_tertiary_grid_1609739755734.png"
+                        width="40" height="40" />
+                    <p>Pet Supplies</p>
+                </div>
+                <div>
+                    <img src="https://ik.imagekit.io/dunzo/home/tr:w-80,h-80_home_icon/icons/R4_Icons/Home/paan_grid_1609739855940.png"
+                        width="40" height="40" />
+                    <p>Paan Shop</p>
+                </div>
+                <div>
+                    <img src="https://ik.imagekit.io/dunzo/home/tr:w-80,h-80_home_icon/icons/R4_Icons/Home/default_gifts_tertiary_grid_1613527886275.png"
+                        width="40" height="40" />
+                    <p>Gifts and Lifestyle</p>
+                </div>
+            </div>
+        </div>
+        <div id="clear"></div>
+        <div id="picks">
+            <h1>Top picks for you</h1>
+            <hr size="5" width="5%" color="green">
+            <img src="https://ik.imagekit.io/dunzo/web-assets/images/d4b.jpg?tr=w-488,h-326,cm-pad_resize" width="200"
+                height="175" />
+            <img src="https://ik.imagekit.io/dunzo/web-assets/images/grocery.jpg?tr=w-488,h-326,cm-pad_resize"
+                width="200" height="175" />
+            <img src="https://ik.imagekit.io/dunzo/web-assets/images/restaurants.jpg?tr=w-488,h-326,cm-pad_resize"
+                width="200" height="175" />
+            <img src="https://ik.imagekit.io/dunzo/web-assets/images/send-packages.jpg?tr=w-488,h-326,cm-pad_resize"
+                width="200" height="175" />
+        </div>
+        <div id="clear"></div>
+        <div id="mobile">
+            <div>
+                <img src="https://resources.dunzo.com/web-assets/prod/_next/static/images/dunzo-daily-app-preview-94aef67c8616ca5766f6472c9af065f4.png"
+                    width="200" height="200" />
+            </div>
+            <div id="text">
+                <p> All this from the convenience of your phone. Download the Dunzo mobile app.</p>
+                <img
+                    src="https://resources.dunzo.com/web-assets/prod/_next/static/images/playstore-fe053d8036d653fed3955cd2c2a1e7e2.svg" />
+                <img
+                    src="https://resources.dunzo.com/web-assets/prod/_next/static/images/appstore-43cd8d3a00a6ed32c485951de9b3af63.svg" />
+            </div>
+        </div>
+        <div id="clear"></div>
+        <div id="areas">
+            <h2>Areas we deliver to</h2>
+            <div>
+                <p>Akshaya Nagar</p>
+                <p>BTM Stage 2</p>
+                <p>Banaswadi</p>
+                <p>Bellandur - Off Sarjapur Road</p>
+                <p>Bellandur, Green Glen</p>
+                <p>Benson Town</p>
+                <p>Bomannahali - MicoLayout</p>
+                <p>Cambridge Layout</p>
+                <p>Chickpet</p>
+                <p>Devarachikanna Halli</p>
+                <p>HSR Layout</p>
+                <p>Horamavu</p>
+                <p>JP Nagar Phase 4-5</p>
+                <p>KG Halli</p>
+                <p>Koramangala, Ejipura</p>
+                <p>MG Road</p>
+                <p>Marathahalli</p>
+                <p>Nayandahalli</p>
+                <p>Ramamurthy Nagar</p>
+                <p>Sarjapur Road</p>
+                <p>Victoria Layout</p>
+                <p>Wilson Garden, Shantinagar</p>
+            </div>
+            <div>
+                <p>Arekere</p>
+                <p>Baiyyappanahalli</p>
+                <p>Bannerghatta</p>
+                <p>Bellandur, APR</p>
+                <p>Bellandur, Lake</p>
+                <p>Bikasipura</p>
+                <p>Bommanahalli</p>
+                <p>Challagatta</p>
+                <p>Chikkalasandra</p>
+                <p>Doddanekundi</p>
+                <p>Halnur</p>
+                <p>ITI Layout</p>
+                <p>JP Nagar Phase 6-7</p>
+                <p>KR Puram</p>
+                <p>Kudlu</p>
+                <p>Mahadevapura</p>
+                <p>Mathikere</p>
+                <p>Pattandur</p>
+                <p>Richmond Town</p>
+                <p>Seshadripura</p>
+                <p>Vimanapura</p>
+                <p>Yemalur</p>
+            </div>
+            <div>
+                <p>Aswanth Nagar</p>
+                <p>Banashankari Stage 1,3</p>
+                <p>Basavanagudi</p>
+                <p>Bellandur, ETV</p>
+                <p>Bellandur, Sakara</p>
+                <p>Bilekahalli</p>
+                <p>Brookefield</p>
+                <p>Chamrajpet</p>
+                <p>Cox Town</p>
+                <p>Domlur, EGL</p>
+                <p>Hebbal</p>
+                <p>Indiranagar</p>
+                <p>JP Nagar phase 8,9</p>
+                <p>Kadubeesanhalli, PTP</p>
+                <p>Kumaraswamy Layout</p>
+                <p>Malleswaram</p>
+                <p>Nagarbhavi</p>
+                <p>RT Nagar</p>
+                <p>Sahakar Nagar</p>
+                <p>Thanisandra</p>
+                <p>Vivek Nagar</p>
+                <p>Yeswanthpur</p>
+            </div>
+            <div>
+                <p>BTM Stage 1</p>
+                <p>Banashankari Stage 2</p>
+                <p>Basaveswaranagar</p>
+                <p>Bellandur, Ecospace</p>
+                <p>Bellandur, Sarjapur Road</p>
+                <p>Binnipet</p>
+                <p>CV Raman Nagar</p>
+                <p>Chellikere</p>
+                <p>Dasarahalli</p>
+                <p>Frazer Town</p>
+                <p>Hoodi</p>
+                <p>JP Nagar Phase 1-3</p>
+                <p>Jayanagar</p>
+                <p>Kaadubesanhalli</p>
+                <p>Lingarajapura</p>
+                <p>Manipal County</p>
+                <p>Nagawara</p>
+                <p>Rajajinagar</p>
+                <p>Sanjay Nagar</p>
+                <p>Ulsoor</p>
+                <p>Whitefeild</p>
+            </div>
+        </div>
+        <div id="clear"></div>
+        <div id="about">
+            <h4>You can’t stop time, but you can save it!</h4>
+            <p>Living in the city, there is never enough time to shop for groceries, pick-up supplies, grab food and
+                wade through traffic on the way back home. How about we take care of all of the above for you? What if
+                we can give you all that time back? Send packages across the city and get everything from food,
+                groceries, medicines and pet supplies delivered right to your doorstep. From any store to your door,
+                just make a list and we’ll make it disappear. Just Dunzo It!</p>
+            <div class="space"></div>
+            <hr size="1" width="100%" color="white">
+            <div>
+                <img src="https://resources.dunzo.com/web-assets/prod/_next/static/images/logo-footer-a7423f59ce95bf41719960ee8314ff2d.png"
+                    width="60" height="60" />
+            </div>
+            <div>
+                <h3>DUNZO</h3>
+                <p>About</p>
+                <p>Jobs</p>
+                <p>Contact</p>
+                <p>Terms & Conditions</p>
+                <p>Privacy Policy</p>
+                <p>Dunzo for partner</p>
+                <p>Dunzo for business</p>
+            </div>
+            <div>
+                <h3>SERVICEABLE CITIES</h3>
+                <p>Bangalore</p>
+                <p>Pune</p>
+                <p>Gurgaon</p>
+                <p>Hyderabad</p>
+                <p>New Delhi</p>
+                <p>Chennai</p>
+                <p>Mumbai</p>
+            </div>
+            <div>
+                <h3>GET IN TOUCH</h3>
+                <p>Email</p>
+                <p>Twitter</p>
+                <p>Facebook</p>
+                <p>Instagram</p>
+                <p>Linkedin</p>
+            </div>
+            <div>
+                <img src="https://resources.dunzo.com/web-assets/prod/_next/static/images/footer-mascot-37512998a23e1abed75aa6c883d8f0a1.png"
+                    width="150" height="150" />
+            </div>
+        </div>
+    </div>
+    <script>
+        function myFunction() {
+            window.location.href = "http://google.com";
+        }
+
+
+        var btn = document.getElementById("btn");
+        btn.addEventListener("click", function () {
+            document.querySelector(".bd-modal").style.display = "flex";
+        });
+
+        var close = document.getElementById("close");
+        close.addEventListener("click", function () {
+            document.querySelector(".bd-modal").style.display = "none";
+        });
+
+        var otp_btn = document.getElementById("otp");
+        otp_btn.addEventListener("click", sendOTP);
+
+        var parent = document.querySelector(".modal-content")
+
+        var otp_value = 0;
+
+
+        function sendOTP() {
+
+            var div = document.createElement("div");
+
+
+            var otp = document.getElementById("otp")
+            var input = document.getElementById("inp_1");
+            input.style.marginTop = "0px"
+
+
+            parent.removeChild(otp);
+
+
+            var otp_lebel = document.createElement("p");
+            otp_lebel.textContent = "Enter your OTP"
+            otp_lebel.style.marginBottom = "0px"
+            var otp_input = document.createElement("input");
+            otp_input.type = "number";
+            otp_input.id = "otp_input";
+            otp_input.setAttribute("class", "otp_input")
+
+            var enterOTP = document.createElement("button");
+            enterOTP.textContent = "Verify and continue";
+            enterOTP.id = "enterOTPbutton"
+            enterOTP.setAttribute("onclick", "CheckOTP()");
+            enterOTP.style.marginTop = "20px";
+            enterOTP.setAttribute("class", "otp_dom");
+
+
+            div.append(otp_lebel, otp_input, enterOTP);
+            parent.append(div);
+
+
+            setTimeout(function () {
+                otp_value = generateOTP()
+                //console.log(otp_value)
+            }, 2000);
+
+        }
+
+
+        function generateOTP() {
+            var n = Math.floor(Math.random() * 1000000);
+            console.log(n)
+            return n;
+        }
+
+
+        function CheckOTP() {
+            var otpGiven = document.getElementById("otp_input").value;
+            console.log(otpGiven)
+            var message = document.createElement("p");
+
+
+            if (otp_value == otpGiven) {
+                window.location.href = "home2.html"
+            }
+            else {
+                alert("Invalid OTP");
+            }
+        }
+
+    </script>
+</body>
+
+</html>
