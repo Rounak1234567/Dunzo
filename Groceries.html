@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Google Fonts links -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+    *{
+        margin:0%;
+        font-family: 'Roboto', sans-serif;
+    }
+    #nav{
+        height: 75px;
+        background-color: white;
+        position: fixed;
+        top:0%;
+        width: 100%;
+        overflow: hidden;
+    }
+    #nav img{
+        height: 60%;
+        margin-left: 13%;
+        box-sizing: border-box;
+        position: absolute;
+        top: 25%;
+        bottom: 25%;
+    }
+    #head{
+        display: flex;
+        height: 300px;
+        margin-top:70px;
+        background-color: rgb(247, 253, 250);;
+    }
+
+    .image{
+        display: flex;
+        flex-direction: row;
+        height: 70%;
+        margin-top: 10%;
+        margin-left:14%;
+    }
+    .image>#image0{
+        background-color: rgba(0, 210, 144, 0.08);;
+        height:40%;
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        width:100px;
+    }
+    #image0>img{
+        width:50%;
+        padding-left: 24px;
+      
+    }
+    .image>#image1{
+        margin-left:18px;
+        margin-top:20px;
+        
+    }
+    #image1>h4{
+        font-weight:normal;
+        color:gray;
+    }
+    #body{
+        width:75%;
+        margin: auto;
+        margin-top: 20px;
+        height: 700px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    #body>#store{
+        width:40%;
+        height:150px;
+        display: flex;
+        flex-direction: row;
+        background-color: white;
+        border-radius: 10px;
+        margin-right: 10%;
+        align-items: center;
+    }
+    #store:hover{
+        box-shadow: 1px 1px 10px 1px lightgray;
+    }
+    #store>img{
+        width:30%;
+        height:70%;
+        margin-right:5%;
+        margin-left:5%;
+    };
+    #details{
+        line-height: 25px;
+    }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="nav">
+            <img src="https://website-assets-fw.freshworks.com/attachments/ckdy3ssa706nciufz8497t248-dunzo-logo.one-half.png">
+        </div>
+       
+        <div id="head">
+           <div class="image">
+               <div id="image0">
+               <img src="https://ik.imagekit.io/dunzo/icons/website/bluegreen/category/grocery.png?tr=w-88,h-88,cm-pad_resize">
+            </div>
+               <div id="image1">
+                   <h2>Groceries & Essentials in Hyderabad</h2>
+                   <h4>8 Stores</h4>
+               </div>
+           </div>
+        </div>
+        
+    </div>
+    <div id="body">
+
+    </div>
+</body>
+</html>
+
+<script>
+    let stores = [
+        {
+            name:"Welcome Store",
+            area:"kurla west",
+            distance:1.3,
+            timeTakes:30,
+            img:'https://ik.imagekit.io/dunzo/dunzo-catalog-prod/tr:w-250,h-250,cm-pad_resize_store_thumbnail/stores/OHVWQTk1QmJxT0FWeDE2aEE5YmdNZz09-1618221264264-store_image.jpg'
+        },
+        {
+            name:"Om Sai Dairy",
+            area:"kurla west",
+            distance:1,
+            timeTakes:36,
+            img:'https://ik.imagekit.io/dunzo/dunzo-catalog-prod/tr:w-250,h-250,cm-pad_resize_store_thumbnail/stores/NzlLemhwaTdOMjFLQk9JQUdXdDJWUT09-1598353288299-store_image.jpg'
+        },
+        {
+            name:"Maharashtra Dairy Farm",
+            area:"Bandra West",
+            distance:1.1,
+            timeTakes:30,
+            img:'https://ik.imagekit.io/dunzo/dunzo-catalog-prod/tr:w-250,h-250,cm-pad_resize_store_thumbnail/stores/SFV6dE8vQ3VGUFg3VHpHSk92V0FHZz09-1600427663123-store_image.jpg'
+        },
+        {
+            name:"V Mart Express",
+            area:"kurla west",
+            distance:0.6,
+            timeTakes:23,
+            img:'https://ik.imagekit.io/dunzo/dunzo-catalog-prod/tr:w-250,h-250,cm-pad_resize_store_thumbnail/stores/enB2dVJ0K0tlaCtDc0NjMEF4ZFo5dz09-1582268757627-store_image.jpg'
+        },
+        {
+            name:"Musa Kirana Store",
+            area:"Santacruz East",
+            distance:1.3,
+            timeTakes:26,
+            img:'https://ik.imagekit.io/dunzo/dunzo-catalog-prod/tr:w-250,h-250,cm-pad_resize_store_thumbnail/stores/b3c2aktnR2M2WURwMEdyT1F3VXVqUT09-1624960007794-store_image.jpg'
+        },
+        {
+            name:"Walk2Mart Superarket",
+            area:"Santacruz East",
+            distance:1.8,
+            timeTakes:28,
+            img:'https://ik.imagekit.io/dunzo/dunzo-catalog-prod/tr:w-250,h-250,cm-pad_resize_store_thumbnail/stores/b3c2aktnR2M2WURwMEdyT1F3VXVqUT09-1624960007794-store_image.jpg'
+        },
+        {
+            name:"Kohinoor Grain Store",
+            area:"kurla East",
+            distance:3.9,
+            timeTakes:30,
+            img:'https://ik.imagekit.io/dunzo/dunzo-catalog-prod/tr:w-250,h-250,cm-pad_resize_store_thumbnail/stores/Q2w4dE92cXNsY0FMbHBrSXRwaDNZUT09-1601024844093-store_image.jpg'
+        },
+        {
+            name:"Mini Mart by Dumpling Khang",
+            area:"Santacruz East",
+            distance:3.1,
+            timeTakes:35,
+            img:'https://ik.imagekit.io/dunzo/dunzo-catalog-prod/tr:w-250,h-250,cm-pad_resize_store_thumbnail/stores/dHcva0p4QVJmN3BxbkpORTN0ZFVRUT09-1587626802010-store_image.jpg'
+        },
+    ];
+    function showItems(){
+        stores.forEach(function(product){
+        var div = document.createElement("div");
+        var details = document.createElement("div");
+        var image = document.createElement("img");
+        var name = document.createElement("p");
+        var area = document.createElement("p");
+        var distance = document.createElement("p");
+            image.src = product.img;
+            name.innerText=product.name;
+            name.style.fontSize="18px"
+            area.innerText=product.area;
+            distance.innerText=product.distance+" km";
+            area.style.color="grey";
+            distance.style.color="grey";
+            div.addEventListener("click",call);
+            details.append(name,area,distance);
+            details.setAttribute("id","details");
+            div.setAttribute("id","store");
+            div.append(image,details);
+            document.getElementById("body").appendChild(div);
+        })
+    }
+    showItems();
+    function call(){
+        alert("clicked")
+    }
+</script>
