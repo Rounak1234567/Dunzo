@@ -180,18 +180,19 @@
             transform: rotate(45deg);
             cursor: pointer;
         }
-        #close2{
+
+        #close2 {
             position: absolute;
             top: 0;
             right: 10px;
             font-size: 30px;
             transform: rotate(45deg);
-            cursor: pointer; 
+            cursor: pointer;
         }
 
         #add_card {
             width: 100%;
-            height: 100%;
+            height: 1500px;
             background-color: rgba(0, 0, 0, 0.6);
             border-radius: 10px;
             position: absolute;
@@ -230,19 +231,41 @@
             height: 40px;
             border-radius: 20px;
         }
-        #card_number{
+
+        #card_number {
             display: grid;
             grid-template-columns: 40% 40%;
             grid-gap: 80%;
         }
-        #card_number input{
+
+        #card_number input {
             width: 100px;
             margin-top: 0%;
         }
-         h5{
+
+        h5 {
             margin: 0px;
             font-size: 10px;
             padding: 0%;
+        }
+
+        #top {
+            display: flex;
+        }
+
+        #cart {
+            margin-left: 20px;
+            width: 25%;
+            height: 400px;
+            background-color: white;
+            border-radius: 10px;
+        }
+        h4{
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+        h3{
+            margin-bottom: 5px;
         }
     </style>
 </head>
@@ -280,14 +303,17 @@
 
     </div>
     <div id="pay0">
-        <div id="pay1">
-            <h2>Add delivery address</h2>
-            <p>Choose your delivery address from address book or add new</p>
-            <button id="add">Add new address</button>
-        </div>
-        <div id="cart">
+        <div id="top">
+            <div id="pay1">
+                <h2>Add delivery address</h2>
+                <p>Choose your delivery address from address book or add new</p>
+                <button id="add">Add new address</button>
+            </div>
+            <div id="cart">
 
+            </div>
         </div>
+
         <div id="pay2">
             <div>
                 <h2>Select payment method</h2>
@@ -316,24 +342,24 @@
             <div id="address">
                 <div>
                     <lable>Flat, Floor, Building Name</lable>
-                    <input type="text" id="line1" placeholder="Nearest Metro Station" />
+                    <input type="text" id="aline1" placeholder="Nearest Metro Station" />
                 </div>
                 <div>
                     <lable>How to reach</lable>
-                    <input type="text" id="line1" placeholder="Enter Flat No!" />
+                    <input type="text" id="aline2" placeholder="Enter Flat No!" />
                 </div>
                 <div>
                     <lable>Flat, Floor, Building Name</lable>
-                    <input type="text" id="line1" placeholder="Enter Flat No!" />
+                    <input type="text" id="aline3" placeholder="Enter Flat No!" />
                 </div>
                 <div>
                     <lable>Flat, Floor, Building Name</lable>
-                    <input type="text" id="line1" placeholder="Enter Flat No!" />
+                    <input type="text" id="aline4" placeholder="Enter Flat No!" />
                 </div>
 
             </div>
             <div id="address1">
-                <button>Continue</button>
+                <button id="continue_btn">Continue</button>
             </div>
         </div>
 
@@ -345,22 +371,22 @@
             <div id="Card_num">
                 <div>
                     <h5>Card Number</h5>
-                    <input type="text" id="line1" placeholder="Nearest Metro Station"/>
+                    <input type="text" id="line1"/>
                 </div>
                 <div id="card_number">
                     <div>
                         <h5>Expiry Date</h5>
-                        <input type="text" id="line1" placeholder="Enter Flat No!"/>
+                        <input type="text" id="line1"/>
                     </div>
                     <div>
                         <h5>CVV code</h5>
-                        <input type="text" id="line1" placeholder="Enter Flat No!" />
+                        <input type="text" id="line1"/>
                     </div>
                 </div>
-                
+
                 <div>
                     <h5>Name on Card</h5>
-                    <input type="text" id="line1" placeholder="Enter Flat No!" />
+                    <input type="text" id="line1"/>
                 </div>
 
             </div>
@@ -368,7 +394,7 @@
                 <button>Add Card & pay</button>
             </div>
         </div>
-        
+
     </div>
 
 </body>
@@ -382,13 +408,56 @@
         document.getElementById("add1").style.display = "none";
     });
     var btn2 = document.getElementById("cards");
-    btn2.addEventListener("click", function(){
+    btn2.addEventListener("click", function () {
         document.getElementById("add_card").style.display = "flex";
     });
     var close2 = document.getElementById("close2");
     close2.addEventListener("click", function () {
         document.getElementById("add_card").style.display = "none";
     });
+
+    var continue_btn = document.getElementById("continue_btn");
+    var add_address = document.getElementById("add");
+
+    continue_btn.addEventListener("click", cont)
+
+        function cont(){
+        var parent = document.getElementById("pay1");
+        parent.removeChild(add_address);
+        document.getElementById("add1").style.display = "none";
+        
+        var new_add = document.createElement("div");
+
+        var address1 = document.getElementById("aline1").value;
+        var address1_p = document.createElement("h3");
+        address1_p.textContent = address1;
+
+        var address2 = document.getElementById("aline2").value;
+        var address2_p = document.createElement("h4");
+        address2_p.textContent = address2;
+
+        var address3 = document.getElementById("aline3").value;
+        var address3_p = document.createElement("h4");
+        address3_p.textContent = address3;
+
+        var address4 = document.getElementById("aline4").value;
+        var address4_p = document.createElement("h4");
+        address4_p.textContent = address4;
+
+        new_add.append(address1_p,address2_p,address3_p,address4_p);
+        parent.append(new_add);
+
+        var change_add = document.createElement("div");
+
+        var change_add_btn = document.createElement("button");
+        change_add_btn.innerText = "Change Address";
+        change_add_btn.style.marginTop = "20px"
+
+        change_add.append(change_add_btn);
+        parent.append(change_add);
+
+        
+    };
 
 </script>
 
