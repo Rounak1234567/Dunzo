@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        #nav-bar {
+            width: 85%;
+            height: 35px;
+            padding: 1% 10%;
+            margin-top: 0%;
+            background-color: white;
+            position: fixed;
+        }
+        
+        #nav-bar>div {
+            padding: 0% 0%;
+            float: left;
+            margin: 0.5% 0%;
+        }
+        
+        #nav-bar>img {
+            float: left;
+            width: 10%;
+            height: 80%;
+            margin-left: 5%;
+        }
+        
+        * {
+            font-family: 'Roboto', sans-serif;
+            margin: 0%;
+        }
+        
+        #pay0 {
+            width: 100%;
+            height: 1150px;
+            padding-top: 100px;
+            background-color: whitesmoke;
+        }
+        
+        #pay1 {
+            width: 50%;
+            height: 500px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-left: 10%;
+        }
+        
+        h2 {
+            font-weight: 500;
+            background: white;
+        }
+        
+        button {
+            background: white;
+        }
+        
+        #add,
+        #cards {
+            height: 100px;
+            width: 300px;
+            border-style: dashed;
+            border-radius: 10px;
+            color: rgb(43, 168, 137);
+        }
+        
+        #change {
+            width: 80px;
+            height: 30px;
+            border-style: dashed;
+            border-radius: 5px;
+            color: rgb(43, 168, 137);
+        }
+        
+        #pay1>div,
+        #pay2>div {
+            background: white;
+        }
+        
+        #pay2 {
+            margin-top: 20px;
+            width: 50%;
+            height: 500px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-left: 10%;
+        }
+        
+        p {
+            color: gray;
+            margin-bottom: 20px;
+            background: white;
+        }
+        
+        #pay3 {
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+        }
+        
+        #pay31 {
+            width: 40%;
+            height: 380px;
+            padding-left: 25px;
+            background: whitesmoke;
+        }
+        
+        #but {
+            background: whitesmoke;
+            border: none;
+            padding-top: 15px;
+            font-size: 16px;
+        }
+        
+        #add1 {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            position: absolute;
+            top: 0%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: none;
+        }
+        
+        #add2 {
+            width: 450px;
+            height: 500px;
+            background-color: white;
+            opacity: 1;
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
+        }
+        
+        #img {
+            text-align: center;
+        }
+        
+        #img>img {
+            width: 350px;
+            height: 250px;
+        }
+        
+        #address {
+            margin-top: 5%;
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-gap: 10px;
+        }
+        
+        #address1 {
+            text-align: center;
+        }
+        
+        #address1 button {
+            margin-top: 2%;
+            border: none;
+            background-color: rgb(110, 226, 191);
+            padding: 2% 30%;
+            height: 40px;
+            border-radius: 20px;
+        }
+        
+        #close {
+            position: absolute;
+            top: 0;
+            right: 10px;
+            font-size: 30px;
+            transform: rotate(45deg);
+            cursor: pointer;
+        }
+        
+        #close2 {
+            position: absolute;
+            top: 0;
+            right: 10px;
+            font-size: 30px;
+            transform: rotate(45deg);
+            cursor: pointer;
+        }
+        
+        #add_card {
+            width: 100%;
+            height: 1500px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            position: absolute;
+            top: 0%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: none;
+        }
+        
+        #card_details {
+            width: 300px;
+            height: 350px;
+            background-color: white;
+            opacity: 1;
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
+        }
+        
+        #Card_num {
+            display: grid;
+            grid-template-columns: 50%;
+            grid-gap: 20px;
+            margin-top: 25px;
+        }
+        
+        #address2 {
+            text-align: center;
+        }
+        
+        #address2 button {
+            margin-top: 10%;
+            border: none;
+            background-color: rgb(110, 226, 191);
+            padding: 2% 30%;
+            height: 40px;
+            border-radius: 20px;
+        }
+        
+        #card_num input {
+            width: 100px;
+            margin-top: 0%;
+        }
+        
+        h5 {
+            margin: 0px;
+            font-size: 14px;
+            padding: 0%;
+            font-weight: 400;
+        }
+        
+        #top {
+            display: flex;
+        }
+        
+        #cart {
+            margin-left: 20px;
+            width: 25%;
+            height: 400px;
+            background-color: white;
+            border-radius: 10px;
+        }
+        
+        h4 {
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+        
+        h3 {
+            margin-bottom: 5px;
+        }
+        
+        #div1 {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid gray;
+            border-radius: 10px;
+            color: gray;
+            font-size: 14px;
+        }
+        
+        #change_add_btn {
+            height: 40px;
+            margin-top: 20px;
+            border: dashed gray;
+            border-radius: 10px;
+            color: rgb(110, 226, 191);
+            background-color: white;
+        }
+
+        ul {
+            list-style: none;
+            /* Remove default bullets */
+        }
+
+        ul li::before {
+            content: "\2022";
+            color: green;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        #checkout{
+            height: 80px;
+            width: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: 0%;
+
+        }
+        #checkout button{
+           font-size: larger;
+           background-color: turquoise;
+            height: 50px;
+            width: auto;
+            border-radius: 25px;
+            
+        }
+        #box {
+            height: 30px;
+            width: 100px;
+            border-radius: 15px;
+            border: 1px solid lightgray;
+            display: flex;
+            margin: auto;
+
+        }
+
+        #box button {
+            height: 30px;
+            width: 30px;
+            border: none;
+            border-color: inherit;
+            border-radius: 50%;
+            background-color: transparent;
+            font-size: large;
+            font-weight: bold;
+        }
+
+        #plus {
+            color: green;
+        }
+
+        #val {
+            margin-top: 5px;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+
+        #box button:hover {
+            cursor: pointer;
+            box-shadow: 1px 1px 1px 1px lightgray;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="nav-bar">
+
+        <img src="https://resources.dunzo.com/web-assets/prod/_next/static/images/logo-4d2d81aefcf296bc100d9edc114c2ea5.png" style="margin-top: 0.5%;" />
+
+        <div id="set_location" style="margin-left: 4%; margin-right: 10%; margin-top: 1%;">
+            <h5 style="margin: 0%; font-weight: 550;">Set Location</h5>
+        </div>
+        <div style=" margin-right: 3%; margin-top: 1%;">
+            <h5 style="margin: 0%; font-weight: 550;">Dunzo for Partners</h5>
+        </div>
+        <div style=" margin-right: 3%; margin-top: 1%;">
+            <h5 style="margin: 0%; font-weight: 550;">Buisness with Dunzo</h5>
+        </div>
+        <div style=" margin-right: 5%; margin-top: 0.0%;">
+            <img src="http://assets.stickpng.com/images/585e4ad1cb11b227491c3391.png" alt="" width="20" height="20" style="margin-left: 20%;" />
+            <p style="margin-top: 0%; font-size: 15px;">Search</p>
+
+        </div>
+        <div style=" margin-right: 5%; margin-top: 0%;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCJ2oIX2mRB0UW-AJwif46egO8Uc12qZs7oQ&usqp=CAU" alt="" width="20" height="20" style="margin-top: 0%; margin-bottom: 1%; margin-left: 10%;">
+            <p style="margin-top: 0%; font-size: 15px;">Cart</p>
+        </div>
+        <div style="margin-top: 0%;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6AvV7qG5r9EE3JdNFASuScC92BHaqiI3KkA&usqp=CAU" alt="" width="30" height="30">
+        </div>
+
+    </div>
+    <div id="pay0">
+        <div id="top">
+            <div id="pay1">
+                <h2>Add delivery address</h2>
+                <p id="page">Choose your delivery address from address book or add new</p>
+                <button id="add">Add new address</button>
+            </div>
+            <div id="cart">
+        
+            </div>
+        </div>
+
+        <div id="pay2">
+            <div>
+                <h2>Select payment method</h2>
+                <p>Select your payment method from the existing one or add new one</p>
+            </div>
+            <div id="pay3">
+                <div id="pay31">
+                    <button id="but">Wallets</button><br />
+                    <button id="but">Credit and Debit cards</button><br />
+                    <button id="but">UPI</button>
+                </div>
+                <div id="pay32">
+                    <button id="cards">Credit and Debit cards</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="add1">
+        <div id="add2">
+            <div id="close">+</div>
+            <h2>Add your address here</h2>
+            <div id="img">
+                <img src="https://www.google.com/maps/d/thumbnail?mid=1daeU8pfm_GZ3jRbwAch2uN7DY7E&hl=en" />
+            </div>
+            <div id="address">
+                <div>
+                    <lable>Flat, Floor, Building Name</lable>
+                    <input type="text" id="aline1" placeholder="E.g. 2nd floor, office" />
+                </div>
+                <div>
+                    <lable>How to reach</lable>
+                    <input type="text" id="aline2" placeholder="E.g. Near metro station" />
+                </div>
+                <div>
+                    <lable>Contact Person Name</lable>
+                    <input type="text" id="aline3" placeholder="E.g. Nikhil" />
+                </div>
+                <div>
+                    <lable>Contact Details</lable>
+                    <input type="text" id="aline4" placeholder="E.g. 1234567890" />
+                </div>
+
+            </div>
+            <div id="address1">
+                <button id="continue_btn">Continue</button>
+            </div>
+        </div>
+
+    </div>
+    <div id="add_card">
+        <div id="card_details">
+            <h2>Add New Card</h2>
+            <div id="close2">+</div>
+            <div id="Card_num">
+                <div>
+                    <h5>Card Number</h5>
+                    <input type="text" id="line1" placeholder="** ** ** 1234" />
+                </div>
+
+                <div>
+                    <h5>Expiry Date</h5>
+                    <input type="text" id="line1" placeholder="MM/YYYY" />
+                </div>
+                <div>
+                    <h5>CVV code</h5>
+                    <input type="text" id="line1" placeholder="e.g. -123" />
+                </div>
+
+
+                <div>
+                    <h5>Name on Card</h5>
+                    <input type="text" id="line1" placeholder="e.g. Rounak Mojumder" />
+                </div>
+
+            </div>
+            <div id="address2">
+                <button>Add Card & pay</button>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+<script>
+    var btn = document.getElementById("add");
+    btn.addEventListener("click", function() {
+        document.getElementById("add1").style.display = "flex";
+    });
+    var close = document.getElementById("close");
+    close.addEventListener("click", function() {
+        document.getElementById("add1").style.display = "none";
+    });
+    var btn2 = document.getElementById("cards");
+    btn2.addEventListener("click", function() {
+        document.getElementById("add_card").style.display = "flex";
+    });
+    var close2 = document.getElementById("close2");
+    close2.addEventListener("click", function() {
+        document.getElementById("add_card").style.display = "none";
+    });
+
+    var continue_btn = document.getElementById("continue_btn");
+    var add_address = document.getElementById("add");
+
+    continue_btn.addEventListener("click", cont)
+
+    function cont() {
+        var parent = document.getElementById("pay1");
+        parent.removeChild(add_address);
+        document.getElementById("add1").style.display = "none";
+
+        var new_add = document.createElement("div");
+        new_add.setAttribute("id", "div1");
+
+        var address1 = document.getElementById("aline1").value;
+        address1.textContent = address1;
+
+        var address2 = document.getElementById("aline2").value;
+
+        address2.textContent = address2;
+
+        var address3 = document.getElementById("aline3").value;
+
+        address3.textContent = address3;
+
+        var address4 = document.getElementById("aline4").value;
+
+        address4.textContent = address4;
+
+        var page1 = document.getElementById("page");
+        parent.removeChild(page1);
+
+
+        new_add.append(address1, address2, address3, address4);
+        parent.append(new_add);
+
+        var change_add = document.createElement("div");
+
+        var change_add_btn = document.createElement("button");
+        change_add_btn.innerText = "Change Address";
+        change_add_btn.setAttribute("id", "change_add_btn");
+
+        change_add.append(change_add_btn);
+        parent.append(change_add);
+
+    };
+
+
+    function displayCartItems() {
+        let total_price = 0;
+        let main_div = document.getElementById('cart')
+        main_div.style.overflow = 'scroll';
+        let cart = JSON.parse(localStorage.getItem('dunzoCart'));
+        //console.log(cart);
+
+        while (main_div.firstChild) {
+            main_div.removeChild(main_div.lastChild);
+        }
+
+        let p = document.createElement('p');
+        p.innerText = 'Your Cart';
+        let ul = document.createElement('ul');
+        main_div.append(p);
+
+        cart.forEach(function (prd) {
+            let li = document.createElement('li');
+            li.style.display = 'flex';
+            li.style.marginBottom = '15px'
+
+            let div1 = document.createElement('div');
+            div1.style.width = '40%'
+            let h3 = document.createElement('h3');
+            h3.innerText = prd.name;
+            h3.style.fontWeight = 'lighter';
+            let h5 = document.createElement('h5');
+            h5.style.fontWeight = 'lighter';
+            h5.innerText = prd.volume;
+
+            let div2 = document.createElement('div');
+            div2.id = "box";
+            div2.style.width = '20%'
+            let btn1 = document.createElement('button');
+            btn1.id = 'minus';
+            
+            btn1.addEventListener('click', function () {//when quantity of an item is decreased
+                let name = event.target.parentNode.parentNode.firstChild.querySelector('h3').innerText;
+
+                let cart = JSON.parse(localStorage.getItem('dunzoCart'));
+
+                cart.forEach(function (prd, index) {
+                    if (prd.name == name) {
+                        prd.qty = prd.qty - 1;
+                        if (prd.qty == 0) {
+                            cart.splice(index, 1)
+                        }
+                        total_price -= prd.price;
+                    }
+                });
+                localStorage.removeItem('dunzoCart')
+                localStorage.setItem('dunzoCart', JSON.stringify(cart));
+                location.reload();
+                if (JSON.parse(localStorage.getItem('dunzoCart')).length === 0) {
+                    localStorage.removeItem('dunzoCart')
+                }
+
+            })
+
+
+            let span = document.createElement('span');
+            span.id = 'val';
+
+
+            let btn2 = document.createElement('button');
+            btn2.id = 'plus';
+
+
+            btn2.addEventListener('click', function () {
+                //when quantity of an item is increased
+                let name = event.target.parentNode.parentNode.firstChild.querySelector('h3').innerText;
+
+                let cart = JSON.parse(localStorage.getItem('dunzoCart'));
+
+                cart.forEach(function (prd) {
+                    if (prd.name == name) {
+                        prd.qty = prd.qty + 1;
+                        total_price += prd.price;
+                    }
+                });
+                localStorage.removeItem('dunzoCart')
+                localStorage.setItem('dunzoCart', JSON.stringify(cart));
+                location.reload();
+            })
+
+            span.innerText = prd.qty;
+            btn1.innerText = '-';
+            btn2.innerText = '+';
+
+            let div3 = document.createElement('div');
+            div3.style.width = '20%'
+            let h4 = document.createElement('h4');
+            h4.innerText = '₹' + prd.price * prd.qty;
+            
+           
+            total_price += prd.price*prd.qty;
+            console.log(total_price);
+
+
+            div1.append(h3, h5);
+            div2.append(btn1, span, btn2);
+            div3.append(h4)
+            
+            li.append(div1, div2, div3);
+            ul.append(li)
+        })
+
+        let div4 = document.createElement('div');
+        div4.id = 'checkout';
+        let checkout_btn = document.createElement('button');
+        checkout_btn.innerHTML = `pay₹${total_price}`
+        div4.append(checkout_btn);
+
+        main_div.append(ul,div4);
+    }
+
+    displayCartItems();
+</script>
+
+</html>

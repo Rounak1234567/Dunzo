@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0%;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        #nav {
+            background-color: white;
+            top: 0%;
+            width: 100%;
+            height:80px;
+            overflow: hidden;
+         }
+        
+        #nav>img {
+            height: 65%;
+            margin-left: 12%;
+            margin-top: 6px;
+            box-sizing: border-box;
+        }
+        #head {
+            display: flex;
+            width:100%;
+            background-color: rgb(247, 253, 250);
+            flex-direction: column;
+            height:500px;
+        }
+        #head>#part1{
+            width:100%;
+            height:250px;
+            display: flex;
+            flex-direction: row;
+        }
+        #part1>#part1a{
+            height: 56%;
+            margin-left: 12%;
+            margin-top: 5%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin-bottom: 17px;
+        }
+        #part1a>#image0{
+            width:150px;
+            height:140px;
+        }
+        #image0>img{
+            width:150px;
+            height: 140px;
+        }
+        #part1a>#image1{
+            margin-left: 40px;
+        }
+        #image1>h1{
+            font-weight: 500;
+            color: rgb(15, 25, 56);
+        }
+        #image1>p{
+            color:grey;
+            padding-top: 20px;
+            font-weight: 400;
+        }
+        /* Search Functionality */
+        #search{
+            height:100px;
+            width:100%;
+            margin-bottom: 15px;
+            margin-top: 5px;
+        }
+        #search>input{
+            width:37%;
+            height: 50px;
+            border: 1px solid darkgray;
+            border-radius: 5px;
+            margin-top: 10px;
+            margin-left: 346px;
+            font-size: 17px;
+            text-align: center;
+            position: relative;
+            background-color: white;
+            z-index: 0;
+        }
+        #search>img{
+            height:20px;
+            position: absolute;
+            margin-left:370px;
+            margin-top: 25px;
+            z-index: 1;
+        }
+        /* Products of each shop */
+        #products{
+            display: flex;
+            flex-direction: row;
+            width:100%;
+            background-color: #fff;
+        }
+        #products1,#products2,#products3{
+            height:400px
+        }
+        /* Product part -1 */
+        #products>#products1{
+            width:24%;
+            display: flex;
+            flex-direction: column;
+            padding-top: 50px;
+            overflow: scroll;
+            overflow-x: hidden;
+        }
+        #products1 > button{
+            text-align: right;
+            height: 45px;
+            font-size: 15px;
+            color: grey;
+            background-color: #fff;
+            border: none;
+        }
+        #products1 > button:hover{
+            cursor: pointer;
+        }
+        /* Products part -2 */
+        #products>#products2{
+            width:40%;
+            display: flex;
+            flex-direction: column;
+            overflow: scroll;
+            overflow-x: hidden;
+        }
+        #bar{
+            height:10px;
+            width:5px;
+            background-color: chartreuse;
+        }
+        /* Products part2 shop products */
+        #products2>#heading{
+            height:60px;
+            padding-left: 24px;
+            padding-top: 18px;
+            font-size: 30px;
+            font-weight: 400;
+            background-color: rgb(243, 243, 245);
+        }
+        #img{
+            width:20px;
+        }
+        #divs{
+            display: flex;
+            flex-direction: row;
+            width:100%;
+            height:150px;
+            align-items: center;
+            line-height: 20px;
+        }
+        #divs>img{
+            height: 60%;
+            width:20%;
+        }
+        #divs>button{
+            margin-left: 10px;
+            height:30px;
+            width:60px;
+            color:rgb(0, 179, 122);
+            border-color: rgb(0, 179, 122);
+            border:1px solid;
+            background-color: transparent;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+        #details{
+            width:300px;
+            margin-left: 25px;
+            padding-top: 5px;
+            height:80px;
+            display: flex;
+            flex-direction: column;
+        }
+        .quantity{
+            font-size: 12px;
+            color:grey
+        }
+        .name{
+            font-size: 17px;
+            color:black;
+            font-weight: 400;
+        }
+         /* Products part - 3 */
+         #products>#products3{
+            width:38%;
+            cursor: pointer;
+        }
+        #products3>p{
+            font-size: 28px;
+            margin-top: 20px;
+            margin-left: 10px;
+            color:grey;
+        }
+        #products3>img{
+            width:300px;
+            height:300px;
+            margin-left: 16%;
+        }
+        #products3>h4{
+            text-align: center;
+            color:grey;
+            font-weight: 300;
+        }
+
+        .transform{
+            box-shadow: 3px 0px 10px 0px lightgray;
+        }
+        .transformBack{
+            box-shadow: 0;
+        }
+        ul {
+  list-style: none; /* Remove default bullets */
+}
+
+ul li::before {
+  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: green; /* Change the color */
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+
+#box{
+            height: 30px;
+            width: 100px;
+            border-radius: 15px;
+            border:1px solid lightgray;
+            display: flex;
+            margin: auto;
+
+}
+#box button{
+    height: 30px;
+    width: 30px;
+    border: none;
+    border-color: inherit;
+    border-radius: 50%;
+    background-color: transparent;
+    font-size: large;
+    font-weight: bold;
+}
+#plus{
+    color:green;
+}
+#val{
+    margin-top: 5px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+#box button:hover{
+    cursor: pointer;
+    box-shadow: 1px 1px 1px 1px lightgray;
+}
+
+    </style>
+</head>
+
+<body>
+  
+        <div id="nav">
+            <img src="https://website-assets-fw.freshworks.com/attachments/ckdy3ssa706nciufz8497t248-dunzo-logo.one-half.png">
+        </div>
+        <div>
+            <!-- Box Below the Nav Bar -->
+        <div id="head">
+            <div id="part1">
+                <div id="part1a">
+                <div id="image0">
+                    <img src="https://ik.imagekit.io/dunzo/dunzo-catalog-prod/tr:w-250,h-250,cm-pad_resize_store_thumbnail/stores/OHVWQTk1QmJxT0FWeDE2aEE5YmdNZz09-1618221264264-store_image.jpg">
+                </div>
+                <div id="image1">
+                    <h1>MATAJI KIRANA AND GENERAL ST...</h1>
+                    <p>Kurla West</p>
+                </div>
+            </div>
+            </div>
+                <hr/>
+                <div id="search">
+                    <img src="https://www.searchpng.com/wp-content/uploads/2019/03/Search-Icon-PNG-Image-715x715.png">
+                    <input type="search" id="searchBar" placeholder="Search in MATAJI KIRANA AND GENERAL STORE">
+                </div>
+                <div>
+                <hr/>
+                <div id="products">
+                    <div id="products1">
+                        <button onclick="displayitems(event,'covidEssentials')" style="font-size: large; font-weight: bold; color: green;">Covid Essentials</button>
+                        <button onclick="displayitems(event,'breakfast')">Breakfast</button>
+                        <button onclick="displayitems(event,'snacks')">Snacks</button>
+                        <button onclick="displayitems(event,'provisions')">Provisions</button>
+                        <button onclick="displayitems(event,'instantFoods')">Instant Foods</button>
+                        <button onclick="displayitems(event,'babyproducts')">Baby Products</button>
+                        <button onclick="displayitems(event,'petFoods')">Pet Foods</button>
+                        <button onclick="displayitems(event,'chocolates')">Chocolates</button>
+                    </div>
+                    <div id="products2">
+                       <div id="heading"><p>CovidEssentials</p></div>
+                       <div id='prds'></div>
+                    </div>
+                    <div id="products3">
+                        <p>Your Cart</p>
+                        <img src="https://resources.dunzo.com/web-assets/prod/_next/static/images/no-items-in-cart-7e84056f44993b68d14184f9b2992af7.png">
+                        <h4>Your cart is empty</h4>
+                        <br> 
+                        <h4>Add items to get started</h4>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+
+</body>
+<script>
+
+    let before_element = document.getElementById('products1').querySelector('button');
+    let before_div = 0;
+
+    let Rice_Grains = [
+    {
+        name:'Rice & Grains'
+    },
+    {
+        name:'Daawat Biryani Basmati Rice',
+        img:'https://ik.imagekit.io/dunzo/tr:w-144,h-144,cm-pad_resize/cjdLRDdQemJGN2hEWkRjRnc5cStjQT09-product_image.jpg',
+        volume:'1kg',
+        price:220
+    },
+    {
+        name:'Fortune Biryani Special Basmati Rice',
+        img:'https://ik.imagekit.io/dunzo/tr:w-144,h-144,cm-pad_resize/aW9mM3dOYy94eFNjbndEanN1SWRSdz09-product_image.jpg',
+        volume:'1kg',
+        price:175
+    },
+    {
+        name:'Sabudana',
+        img:'https://ik.imagekit.io/dunzo/tr:w-144,h-144,cm-pad_resize/1615706681361_product_5c282c2ff7e98871f4f8c193_1.jpg',
+        volume:'500gms',
+        price:59
+    }
+];
+
+let Pulses =[
+    {
+        name:'Pulses'
+    },
+    {
+        name:'Groundnuts',
+        img:'https://ik.imagekit.io/dunzo/tr:w-144,h-144,cm-pad_resize/1615706651987_product_5c135ae66994164bc9f7fdc0_1.jpg',
+        volume:'500gms',
+        price:117,
+    },
+    {
+        name:'Kabuli Chana',
+        img:'https://ik.imagekit.io/dunzo/tr:w-144,h-144,cm-pad_resize/1615706289164_product_5c135ae66994164bc9f7fdd1_1.jpg',
+        volume:'500gms',
+        price:123,
+    },
+    {
+        name:'Black Urad Dal',
+        img:'https://ik.imagekit.io/dunzo/tr:w-144,h-144,cm-pad_resize/cFVnVmxjcGJpUEJQMEVzaDNwaHRrdz09-product_image.jpg',
+        volume:'1kg',
+        price:140,
+    }
+];
+
+
+let Atta_Flour =[
+    {
+        name:'Atta & Flour'
+    },
+    {
+        name:'Aashirvaad Multigrain Atta',
+        img:'https://ik.imagekit.io/dunzo/tr:w-144,h-144,cm-pad_resize/aFlwL0h0d2RoT0poaG1WaU1zb3djUT09-product_image.jpg',
+        volume:'5kgs',
+        price:310,
+    },
+    {
+        name:'Besan Flour',
+        img:'https://ik.imagekit.io/dunzo/tr:w-144,h-144,cm-pad_resize/VVhnT3Y5YlZkbzVlL2RCVWVpamFsQT09-product_image.jpg',
+        volume:'500gms',
+        price:60,
+    },
+    {
+        name:'Aashirvaad Superior Mp Atta',
+        img:'https://ik.imagekit.io/dunzo/tr:w-144,h-144,cm-pad_resize/1615700352436_product_5c2638fbbbc7ac725f291d26_1.jpg',
+        volume:'5kgs',
+        price:305,
+    }
+];
+
+let Provisions = [Rice_Grains,Pulses,Atta_Flour];
+
+localStorage.setItem('provisions',JSON.stringify(Provisions));
+
+    let CovidEssentials = [
+    {
+        name:'covid Essentials'
+    },  
+    {
+        name: "Dettol Original Instant Hand Sanitizer",
+        volume: "200 Ml",
+        price: "190",
+        img: "https://ik.imagekit.io/dunzo/tr:w-144,h-144,cm-pad_resize/VnZSM1BxMEVTaUJNbHBJUkRJaSt5UT09-product_image.jpg",
+    }, {
+        name: "N95 Reusable Outdoor Mask",
+        volume: "1 Pc",
+        price: "100",
+        img: "https://ik.imagekit.io/dunzo/tr:w-144,h-144,cm-pad_resize/Mkw5K0FxSnpnWGh6SXBzWTRQMkhaUT09-product_image.jpg",
+    }, {
+        name: "Comfort After Wash Anti Bacterial Fabric Conditioner",
+        volume: "200 Ml",
+        price: "56",
+        img: "https://ik.imagekit.io/dunzo/1614969862598_variant_5c021de829a128442cdc375f_1.jpg?tr=w-488,h-488,cm-pad_resize",
+    }, {
+        name: "Surf Excel Easywash Detergent Powder",
+        volume: "500 Gms",
+        price: "155",
+        img: "https://ik.imagekit.io/dunzo/1614969860568_variant_5bffffb0f07b8356278c14a6_1.jpg?tr=w-488,h-488,cm-pad_resize",
+    }, {
+        name: "Vanish Oxi Action Liquid",
+        volume: "180 Ml",
+        price: "199",
+        img: "https://ik.imagekit.io/dunzo/tr:w-144,h-144,cm-pad_resize/1615700527346_product_5bf85b70269a0f1dd3c38995_1.jpg",
+    }, ];
+
+    let covidEssentials = [CovidEssentials];
+    localStorage.setItem('covidEssentials',JSON.stringify(covidEssentials));
+
+
+
+    function display(arr) {
+        let main_div = document.getElementById("prds");
+
+        arr.forEach(function(type) {
+            type.forEach(function(products,index) {
+                    if(index === 0){
+                        let h2 = document.createElement('h2');
+                        h2.innerText = products.name;
+                        h2.style.fontWeight = 'bold';
+                        main_div.append(h2);
+                    }else{
+                        var div = document.createElement("div");
+                        var img = document.createElement("img");
+                        img.setAttribute("id","img")
+                        var details = document.createElement("div");
+                        var name = document.createElement("h4")
+                        var quantity = document.createElement("p");
+                        var price = document.createElement("h5");
+                        var button = document.createElement("button");
+                        
+                        // Adding all products dynamically.
+                        img.src = products.img;
+                        name.textContent=products.name;
+                        quantity.textContent=products.volume;
+                        price.textContent=`₹ ${products.price}`;
+                        button.innerText="+ADD"
+                        details.append(name,quantity,price);
+                        quantity.setAttribute("class","quantity");
+                        name.setAttribute("class","name");
+                        price.setAttribute("class","name")
+                        details.setAttribute("id","details")
+                        div.append(img,details,button);
+                        div.setAttribute("id","divs")
+                        document.getElementById("prds").append(div);
+                        button.addEventListener('click',moveToCart);
+                        div.addEventListener('mouseenter',function(){
+                            div.querySelector('h4').style.color = 'green';
+                            div.setAttribute('class','transform');
+                        })
+                        div.addEventListener('mouseleave',function(){
+                            div.querySelector('h4').style.color = 'black';
+                            div.setAttribute('class','transformBack');
+                        })
+                    }
+                    
+            })
+        });
+        before_div = document.getElementById('prds');
+    }
+
+    function displayitems(e,id){
+        before_element.style = "none";
+        console.log(before_div)
+        
+        while (before_div.firstChild) {
+            before_div.removeChild(before_div.lastChild);
+        }
+
+        let btn = e.target;
+        btn.style.fontSize = "large";
+        btn.style.fontWeight = "bold";
+        btn.style.color = 'green';
+        before_element = btn;
+
+        let itemsHead = document.getElementById('heading');
+        itemsHead.innerText = btn.innerText;
+        let data = JSON.parse(localStorage.getItem(id));
+
+        if(data == null){
+            let main_div = document.getElementById("prds");
+            let h2 = document.createElement('h2');
+            h2.innerText = "No data available";
+            //h2.style.fontWeight = 'bold';
+            main_div.append(h2);
+        }else{
+            display(JSON.parse(localStorage.getItem(id)));
+        }
+       
+    }
+    
+
+
+    display(JSON.parse(localStorage.getItem('covidEssentials')));
+    
+
+    function moveToCart() {
+        let cart = [];
+        let isThere = false;
+        
+        let price = event.target.parentNode.querySelector('h5').innerText;
+        let arr = price.split(" ");
+        price = Number(arr[1]);
+
+        let item = {
+            name:event.target.parentNode.querySelector('h4').innerText,
+            img:event.target.parentNode.querySelector('img').src,
+            volume:event.target.parentNode.querySelector('p').innerText,
+            price:price,
+            qty:1
+        };
+        console.log(item);
+
+        cart = JSON.parse(localStorage.getItem('dunzoCart')); 
+
+        if(cart === null){
+            console.log('set the cart');
+            cart = [item];
+            localStorage.setItem('dunzoCart',JSON.stringify(cart));
+        }else{
+
+            cart.forEach(function(prd){
+                if(prd.name === item.name){
+                    prd.qty = prd.qty + 1;
+                    isThere = true;
+                } 
+            });
+
+            if(isThere == false){
+                cart[cart.length]=item;
+                localStorage.setItem('dunzoCart',JSON.stringify(cart));
+                isThere = false;
+            }else{
+                localStorage.setItem('dunzoCart',JSON.stringify(cart));
+            }
+            
+        }
+        if(JSON.parse(localStorage.getItem('dunzoCart')) != null){
+            console.log("madhu")
+            displayCartItems();
+        }
+       
+    }
+
+
+    function displayCartItems() {
+        let main_div = document.getElementById('products3')
+        main_div.style.overflow = 'scroll';
+        let cart = JSON.parse(localStorage.getItem('dunzoCart'));
+        console.log(cart);
+    
+            while (main_div.firstChild) {
+            main_div.removeChild(main_div.lastChild);
+            }
+
+            let p = document.createElement('p');
+            p.innerText = 'Your Cart';
+            let ul = document.createElement('ul');
+            main_div.append(p);
+
+            cart.forEach(function(prd){
+                let li = document.createElement('li');
+                li.style.display = 'flex';
+                li.style.marginBottom = '15px'
+
+                let div1 = document.createElement('div');
+                div1.style.width = '40%'
+                let h3 = document.createElement('h3');
+                h3.innerText = prd.name;
+                h3.style.fontWeight = 'lighter';
+                let h5 = document.createElement('h5');
+                h5.style.fontWeight = 'lighter';
+                h5.innerText = prd.volume;
+
+                let div2 = document.createElement('div');
+                div2.id = "box";
+                div2.style.width = '15%'
+                let btn1 = document.createElement('button');
+                btn1.id = 'minus';
+                btn1.addEventListener('click',function(){
+                    //jkjashljkhfdlhaiuldhvjahdjbvc
+                    let name = event.target.parentNode.parentNode.firstChild.querySelector('h3').innerText;
+
+                    let cart = JSON.parse(localStorage.getItem('dunzoCart'));
+
+                    cart.forEach(function(prd,index){
+                        if(prd.name == name){
+                            prd.qty = prd.qty-1;
+                            if(prd.qty == 0){
+                                cart.splice(index,1)
+                            }
+                        }
+                    });
+                    localStorage.removeItem('dunzoCart')
+                    localStorage.setItem('dunzoCart',JSON.stringify(cart));
+                    location.reload();
+                    if(JSON.parse(localStorage.getItem('dunzoCart')).length === 0){
+                        localStorage.removeItem('dunzoCart')
+                    }
+
+                })
+
+
+                let span = document.createElement('span');
+                span.id ='val';
+
+
+                let btn2 = document.createElement('button');
+                btn2.id = 'plus';
+                btn2.addEventListener('click',function(){
+                    //sdjkjdshkjhvif
+                    let name = event.target.parentNode.parentNode.firstChild.querySelector('h3').innerText;
+
+                    let cart = JSON.parse(localStorage.getItem('dunzoCart'));
+
+                    cart.forEach(function(prd){
+                        if(prd.name == name){
+                            prd.qty = prd.qty+1;
+                        }
+                    });
+                    localStorage.removeItem('dunzoCart')
+                    localStorage.setItem('dunzoCart',JSON.stringify(cart));
+                    location.reload();
+                })
+                
+                span.innerText = prd.qty;
+                btn1.innerText = '-';
+                btn2.innerText = '+';
+
+                let div3 = document.createElement('div');
+                div3.style.width = '20%'
+                let h4 = document.createElement('h4');
+                h4.innerText = '₹'+ prd.price * prd.qty;
+
+                
+                div1.append(h3,h5);
+                div2.append(btn1,span,btn2);
+                div3.append(h4)
+                li.append(div1,div2,div3);
+                ul.append(li)
+            })
+
+            main_div.append(ul);
+    }
+
+    if(JSON.parse(localStorage.getItem('dunzoCart')) != null){
+        displayCartItems();
+    }
+    
+</script>
+
+</html>
