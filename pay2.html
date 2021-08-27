@@ -251,8 +251,8 @@
         
         #cart {
             margin-left: 20px;
-            width: 25%;
-            height: 400px;
+            width: 100%;
+            height: 300px;
             background-color: white;
             border-radius: 10px;
         }
@@ -351,6 +351,29 @@
             cursor: pointer;
             box-shadow: 1px 1px 1px 1px lightgray;
         }
+        #invoice{
+            margin-top: 10px;
+            margin-left: 20px;
+            height: 150px;
+            background-color: white;
+            width: 100%;
+        }
+        #instructions{
+            width: 100%;
+            margin-left: 20px;
+            margin-top: 10px;
+            background-color: white;
+           
+            margin-bottom: 10px;
+        }
+        #instructions input{
+            border: none;
+            
+            width: 100%;
+        }
+        #right{
+            width: 25%;
+        }
     </style>
 </head>
 
@@ -389,9 +412,22 @@
                 <p id="page">Choose your delivery address from address book or add new</p>
                 <button id="add">Add new address</button>
             </div>
-            <div id="cart">
+            <div id="right">
+                <div id="cart">
         
+                </div>
+                <div id="instructions">
+                    <input type="text" placeholder="Add instructions related to delevery?">
+                </div>
+                <div id="invoice">
+                    <h4>gdfgsdf</h4><br>
+                    <p>fgsdfg</p>
+                    <p>fgdsfg</p>
+                    <p style="float: left;">gfsdg</p>
+                    <p style="float: right;">sdgfdg</p>
+                </div>
             </div>
+            
         </div>
 
         <div id="pay2">
