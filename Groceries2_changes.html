@@ -297,12 +297,32 @@ ul li::before {
     box-shadow: 1px 1px 1px 1px lightgray;
 }
 
+<<<<<<< HEAD
 .menu{
             color:rgb(0, 179, 122);
             border-right: 1px solid black;
             border-width: 4px;
             border-right-color: rgb(0, 179, 122);
         }
+=======
+
+#checkout{
+    background-color:white;
+    height: 60px;
+    position: relative;
+    bottom: 0%;
+}
+#checkout button{
+    height: 30px;
+    border-radius: 15px;
+    font-size: large;
+    font-weight: bold;
+    background-color: green;
+    position: absolute;
+    right: 50%;
+    top:50%;
+}
+>>>>>>> 1feba600ef28a118d49717ec8b3c078b0d109392
     </style>
 </head>
 
@@ -632,6 +652,7 @@ localStorage.setItem('provisions',JSON.stringify(Provisions));
 
 
     function displayCartItems() {
+        let total_price = 0;
         let main_div = document.getElementById('products3')
         main_div.style.overflow = 'scroll';
         let cart = JSON.parse(localStorage.getItem('dunzoCart'));
@@ -676,7 +697,9 @@ localStorage.setItem('provisions',JSON.stringify(Provisions));
                             prd.qty = prd.qty-1;
                             if(prd.qty == 0){
                                 cart.splice(index,1)
+                               
                             }
+                            total_price -= prd.price;
                         }
                     });
                     localStorage.removeItem('dunzoCart')
@@ -704,6 +727,7 @@ localStorage.setItem('provisions',JSON.stringify(Provisions));
                     cart.forEach(function(prd){
                         if(prd.name == name){
                             prd.qty = prd.qty+1;
+                            total_price += prd.price;
                         }
                     });
                     localStorage.removeItem('dunzoCart')
@@ -720,15 +744,27 @@ localStorage.setItem('provisions',JSON.stringify(Provisions));
                 let h4 = document.createElement('h4');
                 h4.innerText = '₹'+ prd.price * prd.qty;
 
-                
+                total_price += prd.price*prd.qty;
+
                 div1.append(h3,h5);
                 div2.append(btn1,span,btn2);
                 div3.append(h4)
                 li.append(div1,div2,div3);
                 ul.append(li)
+                
             })
+                let div4 = document.createElement('div');
+                div4.id = 'checkout';
+                let checkout_btn = document.createElement('button');
+                checkout_btn.innerText = `checkout ₹${total_price}`;
 
-            main_div.append(ul);
+                checkout_btn.addEventListener('click',function(){
+                    window.location.href = "pay2.html";
+                });
+                div4.append(checkout_btn);
+
+            main_div.append(ul,div4);
+           
     }
 
     if(JSON.parse(localStorage.getItem('dunzoCart')) != null){

@@ -354,7 +354,7 @@
         #invoice{
             margin-top: 10px;
             margin-left: 20px;
-            height: 150px;
+            height: 170px;
             background-color: white;
             width: 100%;
         }
@@ -420,11 +420,28 @@
                     <input type="text" placeholder="Add instructions related to delevery?">
                 </div>
                 <div id="invoice">
-                    <h4>gdfgsdf</h4><br>
-                    <p>fgsdfg</p>
-                    <p>fgdsfg</p>
-                    <p style="float: left;">gfsdg</p>
-                    <p style="float: right;">sdgfdg</p>
+                    <h4>invoice</h4><br>
+
+                    <div class="txt">
+                        <p style="float: left;">itemTotal</p>
+                        <p id="itemtotal" style="float: right;">0</p>
+                        <div style="clear:both"></div>
+                    </div>
+                    
+                    <hr/>
+
+                    <div class="txt" style="margin-top:8px">
+                        <p style="float: left;">Partner delivery feen &nbsp &#9432</p>
+                        <p style="float: right; color: green;">Free</p>
+                        <div style="clear:both"></div>
+                    </div>
+                    <hr/>
+                    <div class="txt">
+                        <p style="float: left;">To Pay</p>
+                        <p id="topay" style="float: right;">0</p>
+                        <div style="clear:both"></div>
+                    </div>
+                   
                 </div>
             </div>
             
@@ -674,7 +691,10 @@
             
            
             total_price += prd.price*prd.qty;
-            console.log(total_price);
+            document.getElementById('itemtotal').innerText = `₹ ${total_price}`;
+            document.getElementById('topay').innerText = `₹ ${total_price}`;
+
+            //console.log(total_price);
 
 
             div1.append(h3, h5);
@@ -685,13 +705,9 @@
             ul.append(li)
         })
 
-        let div4 = document.createElement('div');
-        div4.id = 'checkout';
-        let checkout_btn = document.createElement('button');
-        checkout_btn.innerHTML = `pay₹${total_price}`
-        div4.append(checkout_btn);
+        
 
-        main_div.append(ul,div4);
+        main_div.append(ul);
     }
 
     displayCartItems();
