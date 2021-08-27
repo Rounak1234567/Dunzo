@@ -283,6 +283,74 @@
             color: rgb(110, 226, 191);
             background-color: white;
         }
+
+        ul {
+            list-style: none;
+            /* Remove default bullets */
+        }
+
+        ul li::before {
+            content: "\2022";
+            color: green;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        #checkout{
+            height: 80px;
+            width: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: 0%;
+
+        }
+        #checkout button{
+           font-size: larger;
+           background-color: turquoise;
+            height: 50px;
+            width: auto;
+            border-radius: 25px;
+            
+        }
+        #box {
+            height: 30px;
+            width: 100px;
+            border-radius: 15px;
+            border: 1px solid lightgray;
+            display: flex;
+            margin: auto;
+
+        }
+
+        #box button {
+            height: 30px;
+            width: 30px;
+            border: none;
+            border-color: inherit;
+            border-radius: 50%;
+            background-color: transparent;
+            font-size: large;
+            font-weight: bold;
+        }
+
+        #plus {
+            color: green;
+        }
+
+        #val {
+            margin-top: 5px;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+
+        #box button:hover {
+            cursor: pointer;
+            box-shadow: 1px 1px 1px 1px lightgray;
+        }
     </style>
 </head>
 
@@ -322,7 +390,7 @@
                 <button id="add">Add new address</button>
             </div>
             <div id="cart">
-
+        
             </div>
         </div>
 
@@ -472,6 +540,125 @@
         parent.append(change_add);
 
     };
+
+
+    function displayCartItems() {
+        let total_price = 0;
+        let main_div = document.getElementById('cart')
+        main_div.style.overflow = 'scroll';
+        let cart = JSON.parse(localStorage.getItem('dunzoCart'));
+        //console.log(cart);
+
+        while (main_div.firstChild) {
+            main_div.removeChild(main_div.lastChild);
+        }
+
+        let p = document.createElement('p');
+        p.innerText = 'Your Cart';
+        let ul = document.createElement('ul');
+        main_div.append(p);
+
+        cart.forEach(function (prd) {
+            let li = document.createElement('li');
+            li.style.display = 'flex';
+            li.style.marginBottom = '15px'
+
+            let div1 = document.createElement('div');
+            div1.style.width = '40%'
+            let h3 = document.createElement('h3');
+            h3.innerText = prd.name;
+            h3.style.fontWeight = 'lighter';
+            let h5 = document.createElement('h5');
+            h5.style.fontWeight = 'lighter';
+            h5.innerText = prd.volume;
+
+            let div2 = document.createElement('div');
+            div2.id = "box";
+            div2.style.width = '20%'
+            let btn1 = document.createElement('button');
+            btn1.id = 'minus';
+            
+            btn1.addEventListener('click', function () {//when quantity of an item is decreased
+                let name = event.target.parentNode.parentNode.firstChild.querySelector('h3').innerText;
+
+                let cart = JSON.parse(localStorage.getItem('dunzoCart'));
+
+                cart.forEach(function (prd, index) {
+                    if (prd.name == name) {
+                        prd.qty = prd.qty - 1;
+                        if (prd.qty == 0) {
+                            cart.splice(index, 1)
+                        }
+                        total_price -= prd.price;
+                    }
+                });
+                localStorage.removeItem('dunzoCart')
+                localStorage.setItem('dunzoCart', JSON.stringify(cart));
+                location.reload();
+                if (JSON.parse(localStorage.getItem('dunzoCart')).length === 0) {
+                    localStorage.removeItem('dunzoCart')
+                }
+
+            })
+
+
+            let span = document.createElement('span');
+            span.id = 'val';
+
+
+            let btn2 = document.createElement('button');
+            btn2.id = 'plus';
+
+
+            btn2.addEventListener('click', function () {
+                //when quantity of an item is increased
+                let name = event.target.parentNode.parentNode.firstChild.querySelector('h3').innerText;
+
+                let cart = JSON.parse(localStorage.getItem('dunzoCart'));
+
+                cart.forEach(function (prd) {
+                    if (prd.name == name) {
+                        prd.qty = prd.qty + 1;
+                        total_price += prd.price;
+                    }
+                });
+                localStorage.removeItem('dunzoCart')
+                localStorage.setItem('dunzoCart', JSON.stringify(cart));
+                location.reload();
+            })
+
+            span.innerText = prd.qty;
+            btn1.innerText = '-';
+            btn2.innerText = '+';
+
+            let div3 = document.createElement('div');
+            div3.style.width = '20%'
+            let h4 = document.createElement('h4');
+            h4.innerText = '₹' + prd.price * prd.qty;
+            
+           
+            total_price += prd.price*prd.qty;
+            console.log(total_price);
+
+
+            div1.append(h3, h5);
+            div2.append(btn1, span, btn2);
+            div3.append(h4)
+            
+            li.append(div1, div2, div3);
+            ul.append(li)
+        })
+
+        let div4 = document.createElement('div');
+        div4.id = 'checkout';
+        let checkout_btn = document.createElement('button');
+        checkout_btn.innerHTML = `pay₹${total_price}`
+        div4.append(checkout_btn);
+
+        main_div.append(ul,div4);
+    }
+
+    displayCartItems();
 </script>
 
 </html>
