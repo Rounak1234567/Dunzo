@@ -10,9 +10,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        *{
+        * {
             margin: 0px;
         }
+
         #page {
             font-family: 'Roboto', sans-serif;
         }
@@ -23,23 +24,38 @@
 
         #home {
             background-color: whitesmoke;
-            padding: 5% 14%;
-            height: 550px;
+            padding: 1% 14%;
+            height: 600px;
         }
-
-        #home>h1 {
+        #home>#location1 {
             font-weight: 500;
             font-size: 36px;
+            margin-left: -1%;
+            color:#000033;
+            font-weight: 400;
         }
 
         #home>p {
             color: gray;
             font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            margin-top: 3%;
+            margin-left: -1%;
+        }
+        #img1{
+            display: flex;
+            flex-direction: row;
+            margin-left: -2%;
+            margin-top: 3%;
         }
 
         #img1>img {
             float: left;
-            padding: 2%;
+            padding: 1%;
+            border-radius: 15px;
+            width: 244px;
+            height: 180px;
         }
 
         img:hover {
@@ -109,26 +125,40 @@
             border-radius: 25px;
             text-align: center;
         }
-
+        #img2{
+            display: flex;
+            flex-direction: row;
+            margin-left: -1%;
+        }
         #img2>div {
             float: left;
-            padding: 4%;
-            cursor: pointer;
-            border-radius: 10px;
+            width:140px;
+            height:100px;
+            background-color:#ffff;
+            margin:2% 1% 0 0;
+            border-radius: 5px;
         }
-        #clear {
-            clear: both;
+        .img2I{
+            padding-left: 15%;
+            padding-top: 10%;
         }
-
+        .img2I+p{
+            font-size: 12px;
+            padding-top: 15%;
+            padding-left: 12%;
+            font-weight: 500;
+        }
         #picks {
             padding: 5% 14%;
+            height:300px;
         }
 
         #picks>h1 {
             font-weight: 500;
             text-align: left;
-            margin-left: 20px;
             margin-bottom: 10px;
+
+            
         }
 
         #picks>img {
@@ -137,40 +167,54 @@
         }
 
         #text {
-            width: 350px;
+            width: 500px;
             height: 100px;
             font-weight: 400;
             font-size: 18px;
+            margin-left: 40%;
+            margin-top: 30px;
         }
-
+        #text>img{
+            padding-top: 25px;
+        }
+        #text>p{
+            padding-top: 20px;
+        }
         #mobile>div {
             float: left;
             padding: 2%;
+            margin-top: -30%;
         }
 
         #mobile {
             background-color: whitesmoke;
-            padding: 10% 27%;
-            height: 80px;
-        }
-
-        #text>img {
-            padding: 2%;
+            padding: 10% 27% 2% 27%;
         }
 
         #areas>h2 {
             font-weight: 500;
             font-size: 24px;
+            margin-top: -30px;
+            margin-bottom: 20px;
         }
 
         #areas {
             padding: 5% 14%;
+            height:600px;
+            font-size: 200px;
         }
 
-        #areas>div {
+        #areas>div{
+            font-size: small;
             color: gray;
             float: left;
             padding-right: 20px;
+           
+        }
+        #areas>div>p{
+            font-size: 16px;
+            line-height: 27px;
+            padding-right: 50px;
         }
 
         #about {
@@ -178,21 +222,29 @@
             width: 70%;
             height: 500px;
         }
-
+        .about{
+            margin-top: 5%;
+            margin-right: 1%;
+            font-family: 25px;
+        }
         #about {
-            padding: 5% 17%;
+            padding: 5% 11%;
+            width:80%;
         }
 
         #about>h4 {
             color: white;
             font-weight: 500;
             font-size: 16px;
+            padding-bottom: 20px;
         }
 
         #about>p {
             color: white;
-            font-weight: 300;
-            font-size: 12px;
+            font-weight: 500;
+            color:lightgray;
+            font-size: 13px;
+            line-height: 18px;
         }
 
         .space {
@@ -231,6 +283,7 @@
             width: 75px;
             border-radius: 20px;
             border: none;
+            margin-top: 0%;
         }
 
 
@@ -330,20 +383,22 @@
         #p_1 {
             margin-bottom: 0px;
         }
-        /* Pointer for the areas */
-        h5,p,img{
-            cursor:pointer;
+
+        /* div>h5 */
+        h5,
+        p,
+        img {
+            cursor: pointer;
         }
-        .img{
-            border-radius: 10px;
-        }
-        #set_location{
-            height:20px;
+
+        #set_location {
+            height: 20px;
             display: flex;
             flex-direction: row;
             cursor: pointer;
         }
     </style>
+   
 </head>
 
 <body>
@@ -404,6 +459,7 @@
             <button class="btn" onClick="myFunction()">Try Dunzo Daily</button>
         </div>
         <div id="home">
+            <p id="homeloc" style="color:rgb(0, 179, 122); font-size: 12px; font-family: Arial, Helvetica, sans-serif;">India > Bangalore</p>
             <h1 id="location1">Bangalore</h1>
             <p>Why step out when you can get everything delivered home with the tap of a button? Your city's favourite
                 delivery app gets you Food, Grocery, Medicine, Pet Supplies, Fruits & Vegetables, Meat & Fish, Health &
@@ -412,43 +468,42 @@
                 shopping to your forgotten charger, we are always on the move for you. Why worry about your chores, when
                 you can get it all Dun!</p>
             <div id="img1">
-                    <img src="https://ik.imagekit.io/dunzo/home/tr:w-488,h-360_home_icon/operator-FFWUCfzmUzhok89HMYt0ON2Gy5oZECO73gRenPw11HxAeCLBtTBOG8FMqMTe92UOnScOPMUnjYDcaPVxx7wSFJwXJ3kSR3YRsPby4EgC4zW2mVYLc99zuvVh7O2Ppmx2QMQd40UiwYLGhy0OjbMayr.png"
-                    width="200" height="175" onclick="img1_ref()"/>
+                    <img src="https://ik.imagekit.io/dunzo/home/tr:w-488,h-360_home_icon/operator-FFWUCfzmUzhok89HMYt0ON2Gy5oZECO73gRenPw11HxAeCLBtTBOG8FMqMTe92UOnScOPMUnjYDcaPVxx7wSFJwXJ3kSR3YRsPby4EgC4zW2mVYLc99zuvVh7O2Ppmx2QMQd40UiwYLGhy0OjbMayr.png" onclick="img1_ref()"/>
                 
                 <img src="https://ik.imagekit.io/dunzo/home/tr:w-488,h-360_home_icon/dunzo/icons/newHome/promoBanner/kitImageUrl/largeIcons/default_pnd_secondary2_1613527381240.png"
-                    width="200" height="175" />
+                     />
                 <img src="https://ik.imagekit.io/dunzo/home/tr:w-488,h-360_home_icon/operator-ABHxCyRo8CLcEMC0YE43zsmH2XHFv3xr6B8Y3tIdBpKE1NBAjyHS4vgJY3T3z8AEascTap9OETFY0CdvpHj70KZSGFNrCxkFVtUugsMRkyV5jVk9XHl164PCPop56VNkdpLhfymH86JkFjMlYYgQHK.jpg"
-                    width="200" height="175" />
+                    />
                 <img src="https://ik.imagekit.io/dunzo/home/tr:w-488,h-360_home_icon/dunzo/icons/newHome/promoBanner/kitImageUrl/largeIcons/default_fnv_secondary2_1613527515094.png"
-                    width="200" height="175" />
+                    />
             </div>
             <div id="img2">
                 <div>
-                    <img src="https://ik.imagekit.io/dunzo/home/tr:w-80,h-80_home_icon/icons/R4_Icons/Home/default_meat_tertiary_grid_1609739765849.png"
+                    <img class="img2I" src="https://ik.imagekit.io/dunzo/home/tr:w-80,h-80_home_icon/icons/R4_Icons/Home/default_meat_tertiary_grid_1609739765849.png"
                         width="40" height="40" />
                     <p>Meat and Fish</p>
                 </div>
                 <div>
-                    <img src="https://ik.imagekit.io/dunzo/home/tr:w-80,h-80_home_icon/icons/R4_Icons/Home/default_pets_tertiary_grid_1609739755734.png"
+                    <img class="img2I" src="https://ik.imagekit.io/dunzo/home/tr:w-80,h-80_home_icon/icons/R4_Icons/Home/default_pets_tertiary_grid_1609739755734.png"
                         width="40" height="40" />
                     <p>Pet Supplies</p>
                 </div>
                 <div>
-                    <img src="https://ik.imagekit.io/dunzo/home/tr:w-80,h-80_home_icon/icons/R4_Icons/Home/paan_grid_1609739855940.png"
+                    <img class="img2I" src="https://ik.imagekit.io/dunzo/home/tr:w-80,h-80_home_icon/icons/R4_Icons/Home/paan_grid_1609739855940.png"
                         width="40" height="40" />
                     <p>Paan Shop</p>
                 </div>
                 <div>
-                    <img src="https://ik.imagekit.io/dunzo/home/tr:w-80,h-80_home_icon/icons/R4_Icons/Home/default_gifts_tertiary_grid_1613527886275.png"
+                    <img class="img2I" src="https://ik.imagekit.io/dunzo/home/tr:w-80,h-80_home_icon/icons/R4_Icons/Home/default_gifts_tertiary_grid_1613527886275.png"
                         width="40" height="40" />
                     <p>Gifts and Lifestyle</p>
                 </div>
             </div>
         </div>
-        <div id="clear"></div>
         <div id="picks">
             <h1>Top picks for you</h1>
-            <hr size="5" width="5%" color="green" style="margin-left: 20px;">
+            <div style="height: 7px; width:70px; background-color: green; border-radius: 10px"> </div>
+            <div id="img1">
             <img src="https://ik.imagekit.io/dunzo/web-assets/images/d4b.jpg?tr=w-488,h-326,cm-pad_resize" width="200"
                 height="175" />
             <img src="https://ik.imagekit.io/dunzo/web-assets/images/grocery.jpg?tr=w-488,h-326,cm-pad_resize"
@@ -457,6 +512,7 @@
                 width="200" height="175" />
             <img src="https://ik.imagekit.io/dunzo/web-assets/images/send-packages.jpg?tr=w-488,h-326,cm-pad_resize"
                 width="200" height="175" />
+            </div>
         </div>
         <div id="clear"></div>
         <div id="mobile">
@@ -583,9 +639,9 @@
             <hr size="1" width="100%" color="white">
             <div>
                 <img src="https://resources.dunzo.com/web-assets/prod/_next/static/images/logo-footer-a7423f59ce95bf41719960ee8314ff2d.png"
-                    width="60" height="60" />
+                style="width:60px;height:60px;margin-top:50px"/>
             </div>
-            <div>
+            <div class="about">
                 <h3>DUNZO</h3>
                 <p>About</p>
                 <p>Jobs</p>
@@ -595,7 +651,7 @@
                 <p>Dunzo for partner</p>
                 <p>Dunzo for business</p>
             </div>
-            <div>
+            <div class="about">
                 <h3>SERVICEABLE CITIES</h3>
                 <p>Bangalore</p>
                 <p>Pune</p>
@@ -605,7 +661,7 @@
                 <p>Chennai</p>
                 <p>Mumbai</p>
             </div>
-            <div>
+            <div class="about">
                 <h3>GET IN TOUCH</h3>
                 <p>Email</p>
                 <p>Twitter</p>
@@ -613,7 +669,7 @@
                 <p>Instagram</p>
                 <p>Linkedin</p>
             </div>
-            <div>
+            <div class="about">
                 <img src="https://resources.dunzo.com/web-assets/prod/_next/static/images/footer-mascot-37512998a23e1abed75aa6c883d8f0a1.png"
                     width="150" height="150" />
             </div>
@@ -640,6 +696,7 @@
             var data = JSON.parse(localStorage.getItem("location"));
             document.getElementById("location").innerText=data;
             document.getElementById("location1").innerText=data;
+            document.getElementById("homeloc").innerText=`India > ${data}`
         }
     }
     showData();
