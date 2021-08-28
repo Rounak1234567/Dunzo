@@ -724,8 +724,9 @@ document.getElementById("search").addEventListener("click",refer);
         document.getElementById("set_location").addEventListener("click",getLoc);
         function getLoc(){
             var input = prompt("Please enter your location.");
+            var place = "Delhi"
             if(localStorage.getItem("location")==null){
-                localStorage.setItem("location",JSON.stringify(input));
+                localStorage.setItem("location",JSON.stringify("place"));
             }else if(localStorage.getItem("location")!=null){
             var data = localStorage.getItem("location");
             data = JSON.parse(data);
