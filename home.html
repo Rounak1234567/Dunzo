@@ -8,6 +8,7 @@
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         *{
@@ -356,12 +357,12 @@
             <div style=" margin-right: 3%; margin-top: 1%;">
                 <h5 style="margin: 0%; font-weight: 550;">Dunzo for Partners</h5>
             </div>
-            <div style=" margin-right: 3%; margin-top: 1%;">
+            <div style=" margin-right: 8.5%; margin-top: 1%;">
                 <h5 style="margin: 0%; font-weight: 550;">Buisness with Dunzo</h5>
             </div>
             <div style=" margin-right: 5%; margin-top: 0.0%;" id="search"> 
-                <img src="http://assets.stickpng.com/images/585e4ad1cb11b227491c3391.png" alt="" width="20"
-                    height="20" style="margin-left: 20%;"/>
+                <img src="http://assets.stickpng.com/images/585e4ad1cb11b227491c3391.png" alt="" width="20" height="20"
+                style="margin-left: 20%;" />
                 <p style="margin-top: 0%; font-size: 15px;">Search</p>
 
             </div>
@@ -459,9 +460,9 @@
             </div>
             <div id="text">
                 <p> All this from the convenience of your phone. Download the Dunzo mobile app.</p>
-                <img
+                <img onclick="google()"
                     src="https://resources.dunzo.com/web-assets/prod/_next/static/images/playstore-fe053d8036d653fed3955cd2c2a1e7e2.svg" />
-                <img
+                <img onclick="appStore()"
                     src="https://resources.dunzo.com/web-assets/prod/_next/static/images/appstore-43cd8d3a00a6ed32c485951de9b3af63.svg" />
             </div>
         </div>
@@ -711,8 +712,16 @@ document.getElementById("search").addEventListener("click",refer);
         function home(){
             window.location.href="home2.html"
         }
+         // if no data is set a random data is give;
+          var data = localStorage.getItem("location");
+          data = JSON.parse(data);
+          if(data==null){
+           var place = "Delhi";
+          place = JSON.stringify(place)
+          localStorage.setItem("location",place);
+    }
         // location functionality
-        document.getElementById("location").addEventListener("click",getLoc);
+        document.getElementById("set_location").addEventListener("click",getLoc);
         function getLoc(){
             var input = prompt("Please enter your location.");
             if(localStorage.getItem("location")==null){
@@ -725,10 +734,19 @@ document.getElementById("search").addEventListener("click",refer);
             } 
         }
     }
+   
+
     // cart functionality
     document.getElementById("cart").addEventListener("click",alertLogin);
     function alertLogin(){
         alert("Please login to check your cart.")
+    }
+    // redirecting to play store and app store
+    function google(){
+        window.location.href="https://play.google.com/store/apps/details?id=com.dunzo.user&hl=en"
+    }
+    function appStore(){
+        window.location.href="https://apps.apple.com/in/app/dunzoit/id1032391728"
     }
     </script>
 </body>
