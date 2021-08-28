@@ -16,14 +16,17 @@
         #back1{
             background-color: whitesmoke;
             width: 100%;
-            height: 100%;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         #back2{
             padding: 100px;
-            background-color: pink;
+            background-color: #DCEDC8;
             width: 500px;
             height: 300px;
-            margin: auto;
+            border-radius: 10px;
         }
         #back2 > img{
             width: 17%;
@@ -49,6 +52,17 @@
             height: 30%;          
             background-color: #9CCC65;
             border-radius: 30px;
+            cursor: pointer;
+        }
+        #preloader{
+            background: white url(https://miro.medium.com/max/1400/1*CsJ05WEGfunYMLGfsT2sXA.gif) no-repeat center;
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            z-index: 100;
+        }
+        #dummy{
+            display: none;
         }
         h2:hover { COLOR: blue; TEXT-DECORATION: none; font-weight: none }
         h4:hover { COLOR: blue; TEXT-DECORATION: none; font-weight: none }
@@ -57,11 +71,30 @@
     </style>
 </head>
 <body>
+
+    <div id="preloader">
+        
+      
+        
+    </div>
+    <div id="dummy">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/YPlZ-nJewRE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/YPlZ-nJewRE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/YPlZ-nJewRE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/YPlZ-nJewRE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/YPlZ-nJewRE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/YPlZ-nJewRE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/YPlZ-nJewRE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/YPlZ-nJewRE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/YPlZ-nJewRE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/YPlZ-nJewRE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/YPlZ-nJewRE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
     <div id="back1">
         <div id="back2">
             <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPJsI4aRlYUfNtT3E2cgONyNVGhFLWkSwqcw&usqp=CAU" />
             <h2>Payment Successful!!</h2>
-            <h4>Your is palced and will be delivered in 2-3 working days</h4>
+            <h5 style="text-align: center;">Your order is palced and will be delivered in 2-3 working days</h5>
            <div id="btn">
             <button>Home</button>
            </div>
@@ -73,3 +106,18 @@
     
 </body>
 </html>
+
+<script>
+
+    var btn = document.getElementById("btn");
+    btn.addEventListener("click", function(){
+        window.location.href = "home2.html"
+    })
+
+    var loader = document.getElementById("preloader");
+
+    window.addEventListener("load", function(){
+        loader.style.display = "none";
+    });
+
+</script>

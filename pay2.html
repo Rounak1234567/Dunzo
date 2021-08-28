@@ -533,7 +533,7 @@
 
             </div>
             <div id="address2">
-                <button>Add Card & pay</button>
+                <button id="confirm_pay">Add Card & pay</button>
             </div>
         </div>
 
@@ -731,6 +731,12 @@
     function home(){
         window.location.href="home2.html"
     }
+
+    var confirm_pay = document.getElementById("confirm_pay");
+    confirm_pay.addEventListener("click",function(){
+        console.log("ckgsdyuvdsvh")
+        window.location.href = "payment_lastpg.html"
+    })
 </script>
 
 </html>
