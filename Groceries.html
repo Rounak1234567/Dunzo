@@ -37,19 +37,20 @@
         background-color: rgb(247, 253, 250);;
     }
     #name{
-        margin-left: 20%;
+        margin-left: 14%;
         margin-top: 1.5%;
         color:rgb(0, 179, 122);
         font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         cursor: pointer;
-        font-weight: 300;
+        font-weight: 500;
+        font-size: 12px;
     }
     .image{
         display: flex;
         flex-direction: row;
         height: 95%;
         margin-top: 6%;
-        margin-left: -9%;
+        margin-left: -8%;
     }
     .image>#image0{
         background-color: rgba(0, 210, 144, 0.08);;
@@ -173,11 +174,11 @@
             <div style=" margin-right: 3%; margin-top: 1%;">
                 <h5 style="margin: 0%; font-weight: 550;">Dunzo for Partners</h5>
             </div>
-            <div style=" margin-right: 3%; margin-top: 1%;">
+            <div style=" margin-right: 8.5%; margin-top: 1%;">
                 <h5 style="margin: 0%; font-weight: 550;">Buisness with Dunzo</h5>
             </div>
             <div style=" margin-right: 5%; margin-top: 0.0%;" id="search">
-                <img src="http://assets.stickpng.com/images/585e4ad1cb11b227491c3391.png" alt="" width="20" height="20"
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Search_Icon.svg/1200px-Search_Icon.svg.png" alt="" width="25" height="25"
                     style="margin-left: 20%;" />
                 <p style="margin-top: 0%; font-size: 15px;">Search</p>
     
@@ -188,8 +189,8 @@
                 <p style="margin-top: 0%; font-size: 15px;">Cart</p>
             </div>
             <div style="margin-top: 0%;">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6AvV7qG5r9EE3JdNFASuScC92BHaqiI3KkA&usqp=CAU"
-                    alt="" width="30" height="30">
+                <img src="https://th.bing.com/th/id/OIP.otGG6FwCkS5_nGk8AvRnXwHaHr?w=209&h=217&c=7&r=0&o=5&pid=1.7" alt="" width="25" height="25">
+                <p style="margin-top: 0%; font-size: 15px; margin-left: -8px;">Profile</p>
             </div>
     
         </div>
@@ -315,7 +316,7 @@
         }
     }
         showData();
-        document.getElementById("location").addEventListener("click",getLoc);
+        document.getElementById("set_location").addEventListener("click",getLoc);
         function getLoc(){
             var input = prompt("Please enter your location.");
             if(localStorage.getItem("location")==null){

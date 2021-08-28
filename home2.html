@@ -126,7 +126,9 @@
 
         #picks>h1 {
             font-weight: 500;
-            text-align: center;
+            text-align: left;
+            margin-left: 20px;
+            margin-bottom: 10px;
         }
 
         #picks>img {
@@ -372,17 +374,17 @@
             
                 <div id="set_location" style="margin-left: 4%; margin-right: 10%; margin-top: 1%;">
                     <svg viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="sc-64ptou-0 bXZuJi jqmf1i-21 kyOhOZ"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 10C16 14.4183 8 22 8 22C8 22 0 14.4183 0 10C0 5.58172 3.58172 2 8 2C12.4183 2 16 5.58172 16 10ZM11 10C11 11.6569 9.65685 13 8 13C6.34315 13 5 11.6569 5 10C5 8.34315 6.34315 7 8 7C9.65685 7 11 8.34315 11 10Z" fill="#00B37A"></path></svg>
-                    <h5 id="location" style="margin: 0%; font-weight: 550;">Set Location</h5>
+                    <h5 id="location"style="margin: 0%; font-weight: 550;">Set Location</h5>
                 </div>
             <div style=" margin-right: 3%; margin-top: 1%;">
                 <h5 style="margin: 0%; font-weight: 550;">Dunzo for Partners</h5>
             </div>
-            <div style=" margin-right: 3%; margin-top: 1%;">
+            <div style=" margin-right: 8.5%; margin-top: 1%;">
                 <h5 style="margin: 0%; font-weight: 550;">Buisness with Dunzo</h5>
             </div>
             <div style=" margin-right: 5%; margin-top: 0.0%;" id="search"> 
-                <img src="http://assets.stickpng.com/images/585e4ad1cb11b227491c3391.png" alt="" width="20"
-                    height="20" style="margin-left: 20%;"/>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Search_Icon.svg/1200px-Search_Icon.svg.png" alt="" width="25" height="25"
+                style="margin-left: 20%;" />
                 <p style="margin-top: 0%; font-size: 15px;">Search</p>
 
             </div>
@@ -397,8 +399,8 @@
                 <p style="margin-top: 0%; font-size: 15px;">Cart</p>
             </div>
             <div style="margin-top: 0%;">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6AvV7qG5r9EE3JdNFASuScC92BHaqiI3KkA&usqp=CAU"
-                    alt="" width="30" height="30">
+                <img src="https://th.bing.com/th/id/OIP.otGG6FwCkS5_nGk8AvRnXwHaHr?w=209&h=217&c=7&r=0&o=5&pid=1.7" alt="" width="25" height="25">
+                <p style="margin-top: 0%; font-size: 15px; margin-left: -8px;">Profile</p>
             </div>
 
         </div>
@@ -426,7 +428,7 @@
         </div>
         <div id="home">
             <h1 id="location1">Bangalore</h1>
-            <p>Why step out when you can get everything delivered home with the tap of a button? Bangalore’s favourite
+            <p>Why step out when you can get everything delivered home with the tap of a button? Your city's favourite
                 delivery app gets you Food, Grocery, Medicine, Pet Supplies, Fruits & Vegetables, Meat & Fish, Health &
                 Wellness, Gifts and Send Packages
                 from one end of the city to the other. From your local kirana stores to your favourite brands, grocery
@@ -469,7 +471,7 @@
         <div id="clear"></div>
         <div id="picks">
             <h1>Top picks for you</h1>
-            <hr size="5" width="5%" color="green">
+            <hr size="5" width="5%" color="green" style="margin-left: 20px;">
             <img src="https://ik.imagekit.io/dunzo/web-assets/images/d4b.jpg?tr=w-488,h-326,cm-pad_resize" width="200"
                 height="175" />
             <img src="https://ik.imagekit.io/dunzo/web-assets/images/grocery.jpg?tr=w-488,h-326,cm-pad_resize"
@@ -664,7 +666,7 @@
         }
     }
     showData();
-    document.getElementById("location").addEventListener("click",getLoc);
+    document.getElementById("set_location").addEventListener("click",getLoc);
         function getLoc(){
             var input = prompt("Please enter your location.");
             if(localStorage.getItem("location")==null){
@@ -672,7 +674,7 @@
             }else if(localStorage.getItem("location")!=null){
             var data = localStorage.getItem("location");
             data = JSON.parse(data);
-            if(data!=input){
+            if(data!=input&&input!=""){
                 localStorage.setItem("location",JSON.stringify(input));
             } 
         }
