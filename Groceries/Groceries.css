@@ -1,0 +1,145 @@
+*{
+    margin:0%;
+    font-family: 'Roboto', sans-serif;
+}
+#nav{
+    height: 75px;
+    background-color: white;
+    position: fixed;
+    top:0%;
+    width: 100%;
+    overflow: hidden;
+}
+#nav img{
+    height: 60%;
+    margin-left: 13%;
+    box-sizing: border-box;
+    position: absolute;
+    top: 25%;
+    bottom: 25%;
+}
+#head{
+    display: flex;
+    height: 200px;
+    margin-top:70px;
+    background-color: rgb(247, 253, 250);;
+}
+#name{
+    margin-left: 14%;
+    margin-top: 1.5%;
+    color:rgb(0, 179, 122);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 12px;
+}
+.image{
+    display: flex;
+    flex-direction: row;
+    height: 95%;
+    margin-top: 6%;
+    margin-left: -8%;
+}
+.image>#image0{
+    background-color: rgba(0, 210, 144, 0.08);;
+    height:40%;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    width:100px;
+}
+#image0>img{
+    width:50%;
+    padding-left: 24px;
+  
+}
+.image>#image1{
+    margin-left:18px;
+    margin-top:20px;
+    
+}
+#image1>h4{
+    font-weight:normal;
+    color:gray;
+}
+    #nav-bar {
+        width: 85%;
+        height: 35px;
+        padding: 1% 10%;
+        margin-top: -70px;
+        background-color: white;
+        position: fixed;
+
+    }
+
+    #nav-bar>div {
+        padding: 0% 0%;
+        float: left;
+        margin: 0.5% 0%;
+
+
+    }
+
+    #nav-bar>img {
+        float: left;
+        width: 10%;
+        height: 80%;
+        margin-left: 5%;
+    }
+    #set_location{
+        height:20px;
+        display: flex;
+        flex-direction: row;
+        cursor: pointer;
+    }
+/* Body Part */
+#body{
+    width:75%;
+    margin: auto;
+    margin-top: 60px;
+    height: 700px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#body>#store{
+    width:40%;
+    height:150px;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    border-radius: 10px;
+    margin-right: 10%;
+    align-items: center;
+}
+#store:hover{
+    box-shadow: 1px 1px 10px 1px lightgray;
+}
+#store>img{
+    width:30%;
+    height:70%;
+    margin-right:5%;
+    margin-left:5%;
+};
+#details{
+    line-height: 25px;
+}
+#cart{
+        position: relative;
+    }
+    #cart > #circle{
+        position: absolute;
+        bottom: 80%;
+        left: 70%;
+    }
+    #circle{
+        display: initial;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        color: white;
+        border-radius: 20px;
+        background-color: red;
+        position: absolute;
+
+    }
