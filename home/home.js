@@ -91,12 +91,12 @@
         }
         document.getElementById("logo").addEventListener("click", hello);
         function hello() {
-            window.location.href = ".././home2.html"
+            window.location.href = "../../home2.html"
         }
         // logo functionality
         document.getElementById("logo").addEventListener("click", home);
         function home() {
-            window.location.href = ".././home2.html"
+            window.location.href = "../../home2.html"
         }
         // if no data is set a random data is give;
         var data = localStorage.getItem("location");
