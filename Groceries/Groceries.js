@@ -83,15 +83,15 @@ function showItems(){
 }
 showItems();
 function call(){
-window.location.href="Groceries2_changes.html"
+window.location.href="../Groceries2_changes/Groceries2_changes.html"
 }
 document.getElementById("search").addEventListener("click",refer);
     function refer(){
-        window.location.href="dunzo.html"
+        window.location.href=".././search.html"
     }
     document.getElementById("logo").addEventListener("click",home);
     function home(){
-        window.location.href="home2.html"
+        window.location.href="../home2/home2.html"
     }
     function showData(){
         if(localStorage.getItem("location")!=null){
@@ -117,7 +117,7 @@ document.getElementById("search").addEventListener("click",refer);
 document.getElementById("cart").addEventListener("click",cart);
 document.getElementById("head").querySelector("p").innerText=`India > ${JSON.parse(localStorage.getItem("location"))}`
 function cart(){
-    window.location.href="pay2.html"
+    window.location.href="../pay/pay.html"
     }
 
 

@@ -186,11 +186,11 @@ var btn = document.getElementById("add");
     }
     //redirect to home
     function home(){
-        window.location.href="home2.html"
+        window.location.href="../home2/home2.html"
     }
 
     var confirm_pay = document.getElementById("confirm_pay");
     confirm_pay.addEventListener("click",function(){
         console.log("ckgsdyuvdsvh")
-        window.location.href = "payment_lastpg.html"
+        window.location.href = "../payment_last_page/payment_last_page.html"
     })

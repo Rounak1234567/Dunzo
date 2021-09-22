@@ -356,7 +356,7 @@ localStorage.setItem('provisions',JSON.stringify(Provisions));
                 checkout_btn.innerText = `checkout ₹${total_price}`;
                 checkout_btn.setAttribute("class","checkout")
                 checkout_btn.addEventListener('click',function(){
-                    window.location.href = "pay2.html";
+                    window.location.href = "../pay/pay.html";
                 });
                 div4.append(checkout_btn);
 
@@ -370,7 +370,7 @@ localStorage.setItem('provisions',JSON.stringify(Provisions));
     // logo redirect to home;
     document.getElementById("logo").addEventListener("click",redirect);
     function redirect(){
-        window.location.href="home2.html"
+        window.location.href="../home2/home2.html"
     }
     //adding location;
     document.getElementById("location").innerText=JSON.parse(localStorage.getItem("location"));
@@ -389,7 +389,7 @@ localStorage.setItem('provisions',JSON.stringify(Provisions));
     }
     document.getElementById("cart").addEventListener("click",cart);
     function cart(){
-        window.location.href="pay2.html"
+        window.location.href="../pay/pay.html"
         }
         //shops location
         document.getElementById("head").querySelector("p").innerText=`India > ${JSON.parse(localStorage.getItem("location"))}`

@@ -1,6 +1,6 @@
 var btn = document.getElementById("btn");
     btn.addEventListener("click", function(){
-        window.location.href = "home2.html"
+        window.location.href = "../home2/home2.html"
     })
 
     var loader = document.getElementById("preloader");

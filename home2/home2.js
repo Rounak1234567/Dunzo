@@ -2,7 +2,7 @@ function myFunction() {
     window.location.href = "http://google.com";
 }
 function img1_ref(){
-    window.location.href = "Groceries.html";
+    window.location.href = "../Groceries/Groceries.html";
 }
 document.getElementById("search").addEventListener("click",refer);
 function refer(){
@@ -10,7 +10,7 @@ function refer(){
 }
 document.getElementById("logo").addEventListener("click",home);
 function home(){
-    window.location.href="home2.html"
+    window.location.href="../home2/home2.html"
 }
 // Getting location data from local storage;
 function showData(){
@@ -38,7 +38,7 @@ function getLoc(){
 // redirecting to cart;
 document.getElementById("cart").addEventListener("click",cart);
 function cart(){
-window.location.href="pay2.html"
+window.location.href="../pay/pay.html"
 }
 
 if(JSON.parse(localStorage.getItem('dunzoCart')) != null){

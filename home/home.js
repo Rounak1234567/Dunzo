@@ -82,7 +82,7 @@
 
 
             if (otp_value == otpGiven) {
-                window.location.href = ".././home2.html"
+                window.location.href = "../home2/home2.html"
             }
             else {
                 alert("Invalid OTP");
