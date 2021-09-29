@@ -250,29 +250,15 @@ img:hover {
     width: 85%;
     height: 35px;
     padding: 1% 10%;
-
+    display: flex;
     background-color: white;
     position: fixed;
 
 }
 
-#nav-bar>div {
-    padding: 0% 0%;
-    float: left;
-    margin: 0.5% 0%;
 
 
-}
 
-#btn {
-    background-color: #1DE9B6;
-    color: white;
-    padding: 8% 10%;
-    width: 75px;
-    border-radius: 20px;
-    border: none;
-    margin-top: 0%;
-}
 
 
 #nav-bar>img {
@@ -384,4 +370,66 @@ img {
     display: flex;
     flex-direction: row;
     cursor: pointer;
+    margin-left: 4%; 
+    margin-right: 10%; 
+    margin-top: 1%;
 }
+
+#logo{
+    margin-top: 0.5%;
+}
+#location{
+    margin: 0%;
+    font-weight: 550;
+}
+#nav_bar1{
+    margin-right: 0%;
+    margin-top: 1%;
+}
+#nav_bar2{
+    margin: 0%;
+    font-weight: 550;
+    margin-left: 20%;
+}
+
+#search{
+    margin-right: 5%;
+    margin-top: 0.0%;
+    margin-left: 3%;
+}
+#nav_bar4{
+    margin-right: 5%;
+    margin-top: 1%;
+    width: 15%;
+    margin-left: 0%;
+}
+
+#nav_bar3{
+    margin: 0%;
+    font-weight: 550;
+}
+#cart{
+    margin-right: 5%;
+    margin-top: 0%;
+}
+#nav_bar5{
+    margin-top: 0%;
+    font-size: 15px;  
+}
+#search > img{
+    margin-left: 20%;
+}
+#nav_bar6{
+    margin-top: 0%;
+    font-size: 15px;
+}
+#btn {
+    background-color: #1DE9B6;
+    color: white;
+    padding: 8% 10%;
+    width: 75px;
+    border-radius: 20px;
+    border: none;
+    margin-top: 10%;
+}
+
