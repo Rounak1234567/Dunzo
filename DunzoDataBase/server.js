@@ -5,54 +5,96 @@ const mongoose = require('mongoose');
 app.use(express.json());
 
 const connect = () => {
+    console.log("Connected to the database")
     return mongoose.connect("mongodb://127.0.0.1:27017/Dunzodb")
 }
 
 
+
+//Schemas to make
+//shop schema
+//product schema
+//category schema
+//subcateg schema
+//quantity schema
+//veg or non veg schema
+//location schema
+
+
+// Shop schema
 const shopSchema = new mongoose.Schema({
     name: { type: String, required: true },
-    location: { type: String, required: true },
-    city: { type: String, required: true }
+    location: { type:mongoose.Schema.Types.ObjectId,ref:"location",required:true },
+    place: { type:mongoose.Schema.Types.ObjectId,ref:"place",required:true},
+    product:[{type:mongoose.Schema.Types.ObjectId,ref:"product",required:true}],
 })
+const Shop = mongoose.model("shop", shopSchema);
 
-const Shops = mongoose.model("shops", shopSchema);
-
-// const sub_typeSchema = new mongoose.Schema({
-//     sub_type:{type:String,required:true}
-// });
-// const Sub_types = mongoose.model("subtypes",sub_typeSchema);
-
-const categorySchema = new mongoose.Schema({
-    type: { type: String, required: true },
-    //sub_types: [{ type: mongoose.Schema.Types.ObjectId, ref: "subtypes", }]
-})
-const Category = mongoose.model("categories", categorySchema);
-
+//product schema
 const productSchema = new mongoose.Schema({
-    name: { type: String, required: true },
-    price: { type: String, required: true },
-    quantity: { type: String, required: true },
-    category: { type: mongoose.Schema.Types.ObjectId, ref: "categories", required: true },
-    shop: [{ type: mongoose.Schema.Types.ObjectId, ref: "shops", required: true }]
+    name:{type:String,required:true},
+    category:{type:mongoose.Schema.Types.ObjectId,ref:"categorie",required:true},
+    subCategory:{type:mongoose.Schema.Types.ObjectId,ref:"subCategory",required:true},
+    image:{type:String,required:true},
+    quantity:{type:String,required:true},
+    price:{type:Number,required:true},
+    vegan:{type:mongoose.Schema.Types.ObjectId,ref:"vegan"}
 })
-const Products = mongoose.model("products", productSchema)
+const Product = mongoose.model("product", productSchema)
+
+//category schema
+const categorySchema = new mongoose.Schema({
+    name: { type: String, required: true },
+})
+const Category = mongoose.model("categorie", categorySchema);
+
+// subCategory Schema:
+const subCategorySchema = new mongoose.Schema({
+    name:{type:String,required:true}
+})
+const SubCategory = new mongoose.model("subCategory",subCategorySchema)
 
 
-//crud for shops
+//vegan Schema
+const veganSchema = new mongoose.Schema({
+    name:{type:String,required:true}
+})
+const Vegan = new mongoose.model("vegan",veganSchema);
+
+// location Schema
+const locationSchema = new mongoose.Schema({
+    name:{type:String,required:true}
+});
+const Location = new mongoose.model("location",locationSchema)
+
+//place Schema
+const Place = new mongoose.model('place',locationSchema);
+
+
+
+
+
+
+
+//------------------------------------------crud for shops----------------------------------------//
 app.get("/shops", async (req, res) => {
-    const shops = await Shops.find().lean().exec();
+    const shops = await Shop.find().populate("location").populate("place").populate("product").lean().exec();
     return res.status(201).send(shops)
 })
 app.post("/shops", async (req, res) => {
-    const shops = await Shops.create(req.body);
+    const shops = await Shop.create(req.body);
     return res.status(201).send(shops)
 })
+app.get("/shops/:id",async(req,res)=>{
+    const data = await Shop.find({location:{$eq:req.params.id}}).populate("location").populate("place");
+    res.send(data)
+})
 app.patch("/shops/:id", async (req, res) => {
-    const shops = await Shops.findByIdAndUpdate(req.params.body, req.body, { new: true })
+    const shops = await Shop.findByIdAndUpdate(req.params.id, req.body, { new: true })
     return res.status(201).send(shops)
 })
 app.delete("/shops/:id", async (req, res) => {
-    const shops = await Shops.findByIdAndDelete(req.params.id);
+    const shops = await Shop.findByIdAndDelete(req.params.id);
     return res.status(201).send(shops)
 })
 
@@ -78,24 +120,94 @@ app.delete("/categories/:id", async (req, res) => {
 
 //crud for products
 app.get("/products", async (req, res) => {
-    const products = await Products.find().lean().exec();
+    const products = await Product.find().lean().exec();
     return res.status(201).send(products)
 })
 app.post("/products", async (req, res) => {
-    const products = await Products.create(req.body);
+    const products = await Product.create(req.body);
     return res.status(201).send(products)
 })
 app.patch("/products/:id", async (req, res) => {
-    const products = await Products.findByIdAndUpdate(req.params.id, req.body, { new: true })
+    const products = await Product.findByIdAndUpdate(req.params.id, req.body, { new: true })
     return res.status(201).send(products)
 })
 app.delete("/products/:id", async (req, res) => {
-    const products = await Products.findByIdAndDelete(req.params.id);
+    const products = await Product.findByIdAndDelete(req.params.id);
     return res.status(201).send(products)
 })
 
 
-app.listen(5000, async () => {
-    await connect();
-    console.log("listening to port 5000");
+//crud for subCategory
+app.get("/subcategory", async (req, res) => {
+    const category = await SubCategory.find().lean().exec();
+    return res.status(201).send(category)
+})
+app.post("/subcategory", async (req, res) => {
+    const category = await SubCategory.create(req.body);
+    return res.status(201).send(category)
+})
+app.patch("/subcategory/:id", async (req, res) => {
+    const category = await SubCategory.findByIdAndUpdate(req.params.id, req.body, { new: true }).lean().exec();
+    return res.status(201).send(category)
+})
+app.delete("/subcategory/:id", async (req, res) => {
+    const category = await SubCategory.findByIdAndDelete().lean().exec();
+    return res.status(201).send(category)
+})
+
+//crud for vegan
+app.get("/vegan", async (req, res) => {
+    const category = await Vegan.find().lean().exec();
+    return res.status(201).send(category)
+})
+app.post("/vegan", async (req, res) => {
+    const category = await Vegan.create(req.body);
+    return res.status(201).send(category)
+})
+app.patch("/vegan/:id", async (req, res) => {
+    const category = await Vegan.findByIdAndUpdate(req.params.id, req.body, { new: true }).lean().exec();
+    return res.status(201).send(category)
+})
+app.delete("/vegan/:id", async (req, res) => {
+    const category = await Vegan.findByIdAndDelete().lean().exec();
+    return res.status(201).send(category)
+})
+//crud for location
+app.get("/location", async (req, res) => {
+    const category = await Location.find().lean().exec();
+    return res.status(201).send(category)
+})
+app.post("/location", async (req, res) => {
+    const category = await Location.create(req.body);
+    return res.status(201).send(category)
+})
+app.patch("/location/:id", async (req, res) => {
+    const category = await Location.findByIdAndUpdate(req.params.id, req.body, { new: true }).lean().exec();
+    return res.status(201).send(category)
+})
+app.delete("/location/:id", async (req, res) => {
+    const category = await Location.findByIdAndDelete().lean().exec();
+    return res.status(201).send(category)
+})
+
+//crud for place
+app.get("/place", async (req, res) => {
+    const category = await Place.find().lean().exec();
+    return res.status(201).send(category)
+})
+app.post("/place", async (req, res) => {
+    const category = await Place.create(req.body);
+    return res.status(201).send(category)
+})
+app.patch("/place/:id", async (req, res) => {
+    const category = await Place.findByIdAndUpdate(req.params.id, req.body, { new: true }).lean().exec();
+    return res.status(201).send(category)
+})
+app.delete("/place/:id", async (req, res) => {
+    const category = await Place.findByIdAndDelete().lean().exec();
+    return res.status(201).send(category)
+})
+app.listen(3000,(req,res)=>{
+    connect()
+    console.log("Server started on port 3000")
 })
