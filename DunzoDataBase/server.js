@@ -1,25 +1,16 @@
 const { application } = require('express');
 const express = require('express');
+const bodyParser = require("body-parser")
+const ejs = require("ejs");
 const app = express();
 const mongoose = require('mongoose');
 app.use(express.json());
-
+app.set("view engine","ejs")
+app.use(bodyParser.urlencoded({extended:true}));
 const connect = () => {
     console.log("Connected to the database")
     return mongoose.connect("mongodb://127.0.0.1:27017/Dunzodb")
 }
-
-
-
-//Schemas to make
-//shop schema
-//product schema
-//category schema
-//subcateg schema
-//quantity schema
-//veg or non veg schema
-//location schema
-
 
 // Shop schema
 const shopSchema = new mongoose.Schema({
@@ -78,8 +69,24 @@ const Place = new mongoose.model('place',locationSchema);
 
 //------------------------------------------crud for shops----------------------------------------//
 app.get("/shops", async (req, res) => {
+    var shop = []
     const shops = await Shop.find().populate("location").populate("place").populate("product").lean().exec();
-    return res.status(201).send(shops)
+   for(var i=0;i<shops.length;i++){
+       shop.push(shops[i].name)
+   }
+   res.send(shops)
+})
+
+app.get("/shops/location/:location",async(req,res)=>{
+    var data = await Location.find({name:{$eq:req.params.location}});
+    var shop = await Shop.find({location:{$eq:data[0]._id}});
+    res.send(shop)
+})
+app.get("/shops/location/place/:location/:place", async(req,res)=>{
+    var location = await Location.find({name:{$eq:req.params.location}});
+    var place = await Place.find({name:{$eq:req.params.place}})
+    let data = await Shop.find({$and:[{location:{$eq:location[0]._id}},{place:{$eq:place[0]._id}}]});
+    res.send(data)
 })
 app.post("/shops", async (req, res) => {
     const shops = await Shop.create(req.body);
@@ -207,7 +214,7 @@ app.delete("/place/:id", async (req, res) => {
     const category = await Place.findByIdAndDelete().lean().exec();
     return res.status(201).send(category)
 })
-app.listen(3000,(req,res)=>{
+app.listen(5000,(req,res)=>{
     connect()
-    console.log("Server started on port 3000")
+    console.log("Server started on port 5000")
 })
