@@ -9,7 +9,8 @@ app.set("view engine","ejs")
 app.use(bodyParser.urlencoded({extended:true}));
 const connect = () => {
     console.log("Connected to the database")
-    return mongoose.connect("mongodb://127.0.0.1:27017/Dunzodb")
+    return mongoose.connect("mongodb+srv://kamleshdb:DunzoDBS@cluster0.b1ocg.mongodb.net/DunzoDB?retryWrites=true&w=majority",{ useNewUrlParser: true, useUnifiedTopology: true })
+    // return mongoose.connect("mongodb://127.0.0.1:27017/Dunzodb")
 }
 
 // Shop schema
@@ -66,7 +67,6 @@ const Place = new mongoose.model('place',locationSchema);
 
 
 
-
 //------------------------------------------crud for shops----------------------------------------//
 app.get("/shops", async (req, res) => {
     var shop = []
@@ -93,8 +93,8 @@ app.post("/shops", async (req, res) => {
     return res.status(201).send(shops)
 })
 app.get("/shops/:id",async(req,res)=>{
-    const data = await Shop.find({location:{$eq:req.params.id}}).populate("location").populate("place");
-    res.send(data)
+    const data = await Shop.findById(req.params.id).populate("location").populate("place").populate("product");
+    res.render("list",{data:data})
 })
 app.patch("/shops/:id", async (req, res) => {
     const shops = await Shop.findByIdAndUpdate(req.params.id, req.body, { new: true })
