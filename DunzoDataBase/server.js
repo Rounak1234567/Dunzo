@@ -1,4 +1,3 @@
-const { application } = require('express');
 const express = require('express');
 const bodyParser = require("body-parser")
 const ejs = require("ejs");
@@ -9,7 +8,7 @@ app.set("view engine","ejs")
 app.use(bodyParser.urlencoded({extended:true}));
 const connect = () => {
     console.log("Connected to the database")
-    return mongoose.connect("mongodb+srv://kamleshdb:DunzoDBS@cluster0.b1ocg.mongodb.net/DunzoDB?retryWrites=true&w=majority",{ useNewUrlParser: true, useUnifiedTopology: true })
+    return mongoose.connect("mongodb+srv://madhu:DunzoDBS@cluster0.b1ocg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",{useNewUrlParser:true,useUnifiedTopology:true})
     // return mongoose.connect("mongodb://127.0.0.1:27017/Dunzodb")
 }
 
@@ -69,12 +68,12 @@ const Place = new mongoose.model('place',locationSchema);
 
 //------------------------------------------crud for shops----------------------------------------//
 app.get("/shops", async (req, res) => {
-    var shop = []
+    //var shop = []
     const shops = await Shop.find().populate("location").populate("place").populate("product").lean().exec();
-   for(var i=0;i<shops.length;i++){
-       shop.push(shops[i].name)
-   }
-   res.send(shops)
+//    for(var i=0;i<shops.length;i++){
+//        shop.push(shops[i].name)
+//    }
+   return res.send(shops);
 })
 
 app.get("/shops/location/:location",async(req,res)=>{
@@ -214,7 +213,7 @@ app.delete("/place/:id", async (req, res) => {
     const category = await Place.findByIdAndDelete().lean().exec();
     return res.status(201).send(category)
 })
-app.listen(5000,(req,res)=>{
-    connect()
+app.listen(5000,async (req,res)=>{
+    await connect()
     console.log("Server started on port 5000")
 })
