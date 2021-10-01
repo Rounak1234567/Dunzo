@@ -1,14 +1,12 @@
 ---
 # Dunzo Project
----
 
----
 # Welcome 
 ---
 
 ### About this project:
 
-> This is a team project, built by us in the Construct Week - Unit 2 at Masai School.
+   This is a team project, built by us in the Construct Week - Unit 2 at Masai School.
 
 ---
 
