@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 //const mongoose = require('mongoose');
 app.use(express.json());
+app.set("view engine","ejs")
+app.use(express.static(__dirname + "/public"))
 //const bodyParser = require("body-parser")
 //const ejs = require("ejs");
 //app.set("view engine","ejs")
