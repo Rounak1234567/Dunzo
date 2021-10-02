@@ -4,10 +4,11 @@ const app = express();
 app.use(express.json());
 app.set("view engine","ejs")
 app.use(express.static(__dirname + "/public"))
-//const bodyParser = require("body-parser")
-//const ejs = require("ejs");
-//app.set("view engine","ejs")
-//app.use(bodyParser.urlencoded({extended:true}));
+const bodyParser = require("body-parser")
+const ejs = require("ejs");
+app.set("view engine","ejs");
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(express.static(__dirname + '/public'));
 
 
 const connect = require("./configs/db_connection")
@@ -29,6 +30,33 @@ app.use("/vegan",veganController)
 app.use("/location",locationController)
 app.use("/place",placeController)
 
+app.use("/home",(req,res)=>{
+    res.render("home")
+})
+
+app.use("/home2",(req,res)=>{
+    res.render("home2")
+})
+
+app.use("/search",(req,res)=>{
+    res.render("search")
+})
+
+app.use("/groceries",(req,res)=>{
+    res.render("groceries")
+})
+
+app.use("/groceries2",(req,res)=>{
+    res.render("groceries2")
+})
+
+app.use("/pay",(req,res)=>{
+    res.render("pay")
+})
+
+app.use("/payment_last_page",(req,res)=>{
+    res.render("payment_last_page")
+})
 
 app.listen(5000,async()=>{
     await connect();
