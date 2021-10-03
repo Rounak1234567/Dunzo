@@ -56,7 +56,37 @@ let stores = [
         img:'https://ik.imagekit.io/dunzo/dunzo-catalog-prod/tr:w-250,h-250,cm-pad_resize_store_thumbnail/stores/dHcva0p4QVJmN3BxbkpORTN0ZFVRUT09-1587626802010-store_image.jpg'
     },
 ];
+
+
+async function store(){
+    let response = await fetch("http://localhost:5000/shops");
+    let shop = await response.json();
+    let i=0;
+    //let shops = [];
+    //console.log(shop[0])
+    shop.forEach((s)=>{
+        //console.log(s);
+        let obj ={};
+        obj.name = s.name;
+        obj.img = s.img;
+        obj.area = s.place.name;
+        obj.distance = s.distance;
+        obj.timeTakes = s.timeTakes;
+        shops.push(obj)
+        //console.log(shops)
+        //shops[i++] = obj;
+    })
+}
+let shops = [];
+store();
+// console.log(shops.length);
+// console.log(shops);
+
+
 function showItems(){
+    console.log(shops.length);
+    console.log(shops);
+
     stores.forEach(function(product){
     var div = document.createElement("div");
     var details = document.createElement("div");

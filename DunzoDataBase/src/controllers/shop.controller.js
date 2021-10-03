@@ -9,13 +9,15 @@ const Place = require("../models/place.model")
 //------------------------------------------crud for shops----------------------------------------//
 router.get("", async (req, res) => {
     const shops = await Shop.find().populate("location").populate("place").populate("product").lean().exec();
-    res.render("groceries_by_ka",{data:shops})
+    //res.render("groceries_by_ka",{data:shops})
+    res.status(201).send(shops);
 })
 
 router.get("/location/:location",async(req,res)=>{
 var data = await Location.find({name:{$eq:req.params.location}});
 var shop = await Shop.find({location:{$eq:data[0]._id}}).populate("location").populate("place").populate("product").lean().exec();
-res.render("groceries_by_ka",{data:shop});
+//res.render("groceries_by_ka",{data:shop});
+res.status(201).send(shop);
 })
 
 router.get("/shopsname/:name",async(req,res)=>{

@@ -141,5 +141,5 @@ function cart(){
         document.getElementById('circle').style.display = "none";
     }
 
-
+    
 document.getElementById("store").addEventListener("click",aler);
