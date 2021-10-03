@@ -61,7 +61,7 @@ First you have to have to go to the signup page and create a new account. Then y
 
 - **Home Page**
 
-![Home Page](link)
+<img height src="https://github.com/Rounak1234567/Dunzo/blob/test/screenshots/landing%20page/landing%20page%201.png"/>
 ![Home Page](link)
 ![Home Page](link)
 ![Home Page](link)
