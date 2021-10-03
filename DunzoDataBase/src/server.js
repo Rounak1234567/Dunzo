@@ -21,7 +21,9 @@ const locationController = require("./controllers/location.controller")
 const veganController = require("./controllers/vegan.controller")
 const placeController = require("./controllers/place.controller")
 
-
+app.get("/",(req,res)=>{
+    res.render("home2")
+})
 app.use("/shops",shopController)
 app.use("/products",productController)
 app.use("/categories",categoryController)
@@ -30,29 +32,6 @@ app.use("/vegan",veganController)
 app.use("/location",locationController)
 app.use("/place",placeController)
 
-app.use("/home",(req,res)=>{
-    res.render("home")
-})
-
-app.use("/home2",(req,res)=>{
-    res.render("home2")
-})
-
-app.use("/search",(req,res)=>{
-    res.render("search")
-})
-
-app.use("/groceries",(req,res)=>{
-    res.render("groceries")
-})
-
-app.use("/groceries2",(req,res)=>{
-    res.render("groceries2")
-})
-
-app.use("/pay",(req,res)=>{
-    res.render("pay")
-})
 
 app.use("/payment_last_page",(req,res)=>{
     res.render("payment_last_page")

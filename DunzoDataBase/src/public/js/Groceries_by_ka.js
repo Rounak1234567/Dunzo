@@ -82,6 +82,7 @@
 //     })
 // }
 // showItems();
+
 function call(){
 //window.location.href="../Groceries2_changes/Groceries2_changes.html"
 window.location.href="groceries2"
@@ -142,6 +143,3 @@ function cart(){
 
 
 document.getElementById("store").addEventListener("click",aler);
-function aler(){
-    alert("hello")
-}
