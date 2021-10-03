@@ -62,36 +62,32 @@ First you have to have to go to the signup page and create a new account. Then y
 - **Home Page**
 
 <img height src="https://github.com/Rounak1234567/Dunzo/blob/test/screenshots/landing%20page/landing%20page%201.png"/>
-![Home Page](link)
-![Home Page](link)
-![Home Page](link)
+<img height src="https://github.com/Rounak1234567/Dunzo/blob/test/screenshots/landing%20page/landing%20page%202.png"/>
+<img height src="https://github.com/Rounak1234567/Dunzo/blob/test/screenshots/landing%20page/landing%20page%203.png"/>
+<img height src="https://github.com/Rounak1234567/Dunzo/blob/test/screenshots/landing%20page/landing%20page%204.png"/>
 
-![Landing Page](link)
+
 
 - **Sign-Up Page**
 
-![Sign Up Page](link)
-
-- **Sign-In Page**
-
-![Sign In Page](link)
+<img height src="https://github.com/Rounak1234567/Dunzo/blob/test/screenshots/signup%20page.png"/>
 
 - **OTP Sent**
 
-![OTP Sent](link)
+<img height src="https://github.com/Rounak1234567/Dunzo/blob/test/screenshots/otp.png"/>
 
 - **Cart Page**
 
-![Cart Page](link)
+<img height src="https://github.com/Rounak1234567/Dunzo/blob/test/screenshots/groceries.png"/>
 
 - **Checkout Page**
 
-![Checkout Page](link)
+<img height src="https://github.com/Rounak1234567/Dunzo/blob/test/screenshots/add%20card.png"/>
 
 - **Order Processing Page**
 
-![Order Processing Page](link)
+<img height src="https://github.com/Rounak1234567/Dunzo/blob/test/screenshots/payment%20loading.png"/>
 
 - **Order Successful Page**
 
-![Order Successful Page](link)
+<img height src="https://github.com/Rounak1234567/Dunzo/blob/test/screenshots/payment%20successful.png"/>
