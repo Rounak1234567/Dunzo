@@ -21,11 +21,11 @@
 
 ### Our Team Members :
 
-- **[Madhu](madhuvenkat6)**
-- **[Kamlesh](Kamleshfw11179)**
+- **[Madhu](https://github.com/madhuvenkat6)**
+- **[Kamlesh](https://github.com/Kamleshfw11179)**
 - **[Kalpana Tamatam](https://github.com/kalpana123-1)**
-- **[Utkarsh](github link)**
-- **[Rounak](Rounak1234567)**
+- **[Utkarsh](https://github.com/)**
+- **[Rounak](https://github.com/Rounak1234567)**
 
 ---
 
