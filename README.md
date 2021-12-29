@@ -17,7 +17,7 @@
 ---
 
 #### Project Demo: 
-- **[Checkout The Live Project Demo](awesome-booth-917140.netlify.app/)**
+- **[Checkout The Live Project Demo](https://awesome-booth-917140.netlify.app/)**
 
 ### Our Team Members :
 
