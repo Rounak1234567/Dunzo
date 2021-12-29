@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="pay.css">
+</head>
+<body>
+    <div id="nav-bar">
+
+        <img onclick="home()" src="https://resources.dunzo.com/web-assets/prod/_next/static/images/logo-4d2d81aefcf296bc100d9edc114c2ea5.png" style="margin-top: 0.5%;" />
+    
+        <div style="margin-top: 0%; margin-left:69%">
+            <img src="https://th.bing.com/th/id/OIP.otGG6FwCkS5_nGk8AvRnXwHaHr?w=209&h=217&c=7&r=0&o=5&pid=1.7" alt="" width="25" height="25">
+            <p style="margin-top: 0%; font-size: 15px; margin-left: -8px;">Profile</p>
+        </div>
+    
+    </div>
+    <div id="pay0">
+        <div id="top">
+            <div id="pay1">
+                <h2>Add delivery address</h2>
+                <p id="page">Choose your delivery address from address book or add new</p>
+                <button id="add">Add new address</button>
+            </div>
+            <div id="right">
+                <div id="cart">
+        
+                </div>
+                <div id="instructions">
+                    <input type="text" placeholder="Add instructions related to delevery?">
+                </div>
+                <div id="invoice">
+                    <h4>invoice</h4><br>
+    
+                    <div class="txt">
+                        <p style="float: left;">itemTotal</p>
+                        <p id="itemtotal" style="float: right;">0</p>
+                        <div style="clear:both"></div>
+                    </div>
+                    
+                    <hr/>
+    
+                    <div class="txt" style="margin-top:8px">
+                        <p style="float: left;">Partner delivery feen &nbsp &#9432</p>
+                        <p style="float: right; color: green;">Free</p>
+                        <div style="clear:both"></div>
+                    </div>
+                    <hr/>
+                    <div class="txt">
+                        <p style="float: left;">To Pay</p>
+                        <p id="topay" style="float: right;">0</p>
+                        <div style="clear:both"></div>
+                    </div>
+                   
+                </div>
+            </div>
+            
+        </div>
+    
+        <div id="pay2">
+            <div>
+                <h2>Select payment method</h2>
+                <p>Select your payment method from the existing one or add new one</p>
+            </div>
+            <div id="pay3">
+                <div id="pay31">
+                    <button id="but">Wallets</button><br />
+                    <button id="but">Credit and Debit cards</button><br />
+                    <button id="but">UPI</button>
+                </div>
+                <div id="pay32">
+                    <button id="cards">Credit and Debit cards</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="add1">
+        <div id="add2">
+            <div id="close">+</div>
+            <h2>Add your address here</h2>
+            <div id="img">
+                <img src="https://www.google.com/maps/d/thumbnail?mid=1daeU8pfm_GZ3jRbwAch2uN7DY7E&hl=en" />
+            </div>
+            <div id="address">
+                <div>
+                    <lable>Flat, Floor, Building Name</lable>
+                    <input type="text" id="aline1" placeholder="E.g. 2nd floor, office" />
+                </div>
+                <div>
+                    <lable>How to reach</lable>
+                    <input type="text" id="aline2" placeholder="E.g. Near metro station" />
+                </div>
+                <div>
+                    <lable>Contact Person Name</lable>
+                    <input type="text" id="aline3" placeholder="E.g. Nikhil" />
+                </div>
+                <div>
+                    <lable>Contact Details</lable>
+                    <input type="text" id="aline4" placeholder="E.g. 1234567890" />
+                </div>
+    
+            </div>
+            <div id="address1">
+                <button id="continue_btn">Continue</button>
+            </div>
+        </div>
+    
+    </div>
+    <div id="add_card">
+        <div id="card_details">
+            <h2>Add New Card</h2>
+            <div id="close2">+</div>
+            <div id="Card_num">
+                <div>
+                    <h5>Card Number</h5>
+                    <input type="text" id="line1" placeholder="** ** ** 1234" />
+                </div>
+    
+                <div>
+                    <h5>Expiry Date</h5>
+                    <input type="text" id="line1" placeholder="MM/YYYY" />
+                </div>
+                <div>
+                    <h5>CVV code</h5>
+                    <input type="text" id="line1" placeholder="e.g. -123" />
+                </div>
+    
+    
+                <div>
+                    <h5>Name on Card</h5>
+                    <input type="text" id="line1" placeholder="e.g. Rounak Mojumder" />
+                </div>
+    
+            </div>
+            <div id="address2">
+                <button id="confirm_pay">Add Card & pay</button>
+            </div>
+        </div>
+    
+    </div>
+    <script type="text/javascript" src="pay.js"></script>
+</body>
+</html>
