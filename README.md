@@ -17,7 +17,7 @@
 ---
 
 #### Project Demo: 
-- **[Checkout The Live Project Demo](https://www.dunzo.com/mumbai)**
+- **[Checkout The Live Project Demo](awesome-booth-917140.netlify.app/)**
 
 ### Our Team Members :
 
